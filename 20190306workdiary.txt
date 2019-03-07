@@ -1,3 +1,10 @@
 观看有关Git的视频，安装了git的客户端并简单了解了一下git的发展史。
 完成了本地库的初始化并设置了签名。
 在eclipse上学习创建了测试类并进行了操作。
+
+
+3月7日学习日志
+学习了在git上进行提交文件修改文件
+git status 查看工作区、暂存区状态
+git add【file name】将工作区的新建和修改添加到暂存区
+git commit -m"commit message"[file name]将暂存区内容提交到本地库
