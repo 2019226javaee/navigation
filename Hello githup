@@ -1,0 +1,2 @@
+首先申请一个用户名称，这个是必要的；然后下载guthub for windows（如果你是在windows上使用的话，url：https://github-windows.s3.amazonaws.com/GitHubSetup.exe），里面包含了一个git shell以及一个简易的图形化工具github
+2、在github的网页上，点击右上角显示的用户名右边的加号，选择"new repository"，键入你的repository name以及Description（可选），创建后你将看到新Repository地址，诸如https://github.com/zengyi1001/xxx.git的url
