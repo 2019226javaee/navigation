@@ -1,0 +1,2 @@
+2019-05-15 19:33:07,208 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-05-15 19:34:19,612 [Worker-4: Creating project "navigation"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: edu.zut.cs.software:navigation:0.0.1-SNAPSHOT @ D:\Java\workspace\Gitproject\oneproject\project\navigation\pom.xml.
