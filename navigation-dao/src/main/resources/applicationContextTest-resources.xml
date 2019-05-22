@@ -17,13 +17,11 @@
 	<!-- JNDI DataSource for J2EE environments -->
 	<!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/appfuse"/> -->
 	<bean id="dataSource"
-		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driver_class}" />
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
-		<property name="maxActive" value="100" />
-		<property name="maxWait" value="1000" />
 		<property name="poolPreparedStatements" value="true" />
 		<property name="defaultAutoCommit" value="false" />
 	</bean>
