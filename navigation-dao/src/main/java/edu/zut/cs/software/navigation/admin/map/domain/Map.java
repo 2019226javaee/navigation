@@ -34,7 +34,7 @@ public class Map extends BaseTreeEntity<Map> {
 	private static final long serialVersionUID = 514354346389706981L;
 
 
-	@OneToMany(mappedBy = "Map", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "map", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	Set<Place> places;
 
 	@Column(name = "Name")
