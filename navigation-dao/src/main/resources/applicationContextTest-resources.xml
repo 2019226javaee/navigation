@@ -34,10 +34,10 @@
 		p:persistenceUnitName="ApplicationEntityManager">
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
 		<property name="jpaDialect" ref="jpaDialect" />
-		<property name="packagesToScan" value="edu.zut.cs.*" />
+		<property name="packagesToScan" value="edu.zut.cs.software.*" />
 		<property name="jpaProperties">
 			<props>
-				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.max_fetch_depth">3</prop>
 				<prop key="hibernate.jdbc.fetch_size">18</prop>
 				<prop key="hibernate.jdbc.batch_size">10</prop>
