@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import edu.zut.cs.software.navigation.admin.place.domain.Place;
+import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 /*
@@ -25,7 +25,7 @@ import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 @Entity
 @Table(name = "N_Map")
-@NamedQueries({ @NamedQuery(name = "Shop.getmap", query = "select m from Map m") })
+@NamedQueries({ @NamedQuery(name = "map.getRoot", query = "select m from Map m") })
 public class Map extends BaseTreeEntity<Map> {
 
 	/**
@@ -34,8 +34,8 @@ public class Map extends BaseTreeEntity<Map> {
 	private static final long serialVersionUID = 514354346389706981L;
 
 
-	@OneToMany(mappedBy = "map", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-	Set<Place> places;
+	/*@OneToMany(mappedBy = "map", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	Set<Place> places;*/
 
 	@Column(name = "Name")
 	String name;

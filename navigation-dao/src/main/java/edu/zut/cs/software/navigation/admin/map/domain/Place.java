@@ -1,4 +1,4 @@
-package edu.zut.cs.software.navigation.admin.place.domain;
+package edu.zut.cs.software.navigation.admin.map.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,17 +33,6 @@ public class Place extends BaseEntity {
 		this.name = name;
 	}
 
-	Long id;
-	@Column(name="ID")
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Id
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	
 	@Column(name="Name")
@@ -69,16 +58,16 @@ public class Place extends BaseEntity {
 	String leftlocation;
 	@Column(name="RLocation")
 	String rightlocation;
-	public Map getMap() {
+	/*public Map getMap() {
 		return map;
 	}
 
 	public void setMap(Map map) {
 		this.map = map;
-	}
+	}*/
 
-	@ManyToOne
-	@JoinColumn(name = "map-id")
-	Map map;
+	/*@ManyToOne
+	@JoinColumn(name = "MAP_ID")
+	Map map;*/
 
 }
