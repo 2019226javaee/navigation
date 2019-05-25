@@ -30,10 +30,10 @@ public class DeviceDaoTest extends GenericDaoTestCase<Long,Device, DeviceDao> {
 		int root_size = 10;
 		for (int i = 0; i < root_size; i++) {
 			Device device = new Device();
-			device.setName("group_" + i);
+			device.setName("device_" + i);
 			for (int j = 0; j < 10; j++) {
 				Device g = new Device();
-				g.setName("group_" + i + "_" + j);
+				g.setName("device_" + i + "_" + j);
 				g.setParent(device);
 			}
 			this.deviceDao.save(device);
