@@ -25,7 +25,7 @@ import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 @Entity
 @Table(name = "N_Map")
-@NamedQueries({ @NamedQuery(name = "map.getRoot", query = "select m from Map m") })
+//@NamedQueries({ @NamedQuery(name = "map.getRoot", query = "select m from Map m") })
 public class Map extends BaseTreeEntity<Map> {
 
 	/**

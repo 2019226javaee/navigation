@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import edu.zut.cs.software.navigation.admin.place.domain.Place;
+import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.service.GenericManagerTestCase;
 
 public class PlaceManagerTest extends GenericManagerTestCase<Long, Place, PlaceManager>{

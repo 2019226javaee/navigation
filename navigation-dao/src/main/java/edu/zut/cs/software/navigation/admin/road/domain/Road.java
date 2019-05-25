@@ -25,16 +25,7 @@ public class Road extends BaseEntity{
 	
 	
 	
-	Long id;
-	@Id
-    @Column(name="ID")
-    @GeneratedValue(strategy=GenerationType.AUTO)
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
 	@Column(name="Name")
 	String name;
 	
