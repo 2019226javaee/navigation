@@ -27,7 +27,7 @@
 	</bean>
 
 	<!-- JPA实体管理器工厂 -->
-	<bean id="entityManagerFactory"
+	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		p:dataSource-ref="dataSource"
 		p:persistenceXmlLocation="classpath:META-INF/persistence.xml"
@@ -60,13 +60,13 @@
 	<bean id="jpaDialect"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
 
-	<bean id="sessionFactory" factory-bean="entityManagerFactory"
-		factory-method="getSessionFactory" />
+	<!--<bean id="sessionFactory" factory-bean="entityManagerFactory"
+		factory-method="getSessionFactory" />-->
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory"
-			ref="entityManagerFactory" /> 
+			ref="emf" /> 
 	</bean>
 
 	<tx:annotation-driven />
