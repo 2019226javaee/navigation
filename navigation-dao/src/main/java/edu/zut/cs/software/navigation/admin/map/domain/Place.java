@@ -58,16 +58,16 @@ public class Place extends BaseEntity {
 	String leftlocation;
 	@Column(name="RLocation")
 	String rightlocation;
-	/*public Map getMap() {
+	public Map getMap() {
 		return map;
 	}
 
 	public void setMap(Map map) {
 		this.map = map;
-	}*/
+	}
 
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name = "MAP_ID")
-	Map map;*/
+	Map map;
 
 }

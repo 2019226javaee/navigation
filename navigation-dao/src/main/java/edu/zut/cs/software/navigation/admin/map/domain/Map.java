@@ -25,7 +25,7 @@ import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 @Entity
 @Table(name = "N_Map")
-//@NamedQueries({ @NamedQuery(name = "map.getRoot", query = "select m from Map m") })
+@NamedQueries({ @NamedQuery(name = "map.getRoot", query = "select m from Map m where m.parent is null") })
 public class Map extends BaseTreeEntity<Map> {
 
 	/**
@@ -34,8 +34,8 @@ public class Map extends BaseTreeEntity<Map> {
 	private static final long serialVersionUID = 514354346389706981L;
 
 
-	/*@OneToMany(mappedBy = "map", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-	Set<Place> places;*/
+	@OneToMany(mappedBy = "map", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	Set<Place> places;
 
 	@Column(name = "Name")
 	String name;
