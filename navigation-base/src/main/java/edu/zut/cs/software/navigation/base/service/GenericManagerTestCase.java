@@ -11,7 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import edu.zut.cs.software.navigation.base.BaseAbstractTestCase;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 
-@ContextConfiguration(locations = { "classpath:/applicationContextTest-resources.xml",
+@ContextConfiguration(locations = { "classpath:/applicationContext-resources.xml",
 		"classpath:/applicationContext-dao.xml", "classpath:/applicationContext-service.xml" })
 public abstract class GenericManagerTestCase<PK extends Serializable, T extends BaseEntity, M extends GenericManager<T, PK>>
 		extends BaseAbstractTestCase {
