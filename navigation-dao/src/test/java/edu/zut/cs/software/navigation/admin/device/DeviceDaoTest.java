@@ -39,7 +39,7 @@ public class DeviceDaoTest extends GenericDaoTestCase<Long,Device, DeviceDao> {
 			this.deviceDao.save(device);
 		}
 		
-		List<Device> roots = this.deviceDao.getRoot();
+		List<Device> roots = this.deviceDao.findAll();
 		assertEquals(root_size, roots.size());
 		if (logger.isInfoEnabled()) {
 			logger.info("testGetRoot() - List<Device> roots={}", roots); 
