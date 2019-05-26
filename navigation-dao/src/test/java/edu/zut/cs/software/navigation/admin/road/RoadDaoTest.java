@@ -23,6 +23,17 @@ public class RoadDaoTest extends GenericDaoTestCase<Long, Road, RoadDao>{
 	}
 	@Test
 	public void testFindAll() {
+		int root_size = 10;
+		for(int i = 0; i < root_size; i++) {
+			Road road = new Road();
+			road.setname("road_" + i);
+			for(int j = 0; j < 10; j++) {
+				Road r = new Road();
+				r.setname("road_" + i + "_" + j);
+				r.setParent(road);
+			}
+			this.roadDao.save(road);
+		}
 		List<Road> all = ((JpaRepository<Road, Long>) this.roadDao).findAll();
 		if (logger.isInfoEnabled()) {
 			logger.info("testFindAll() - List<road> all={}", all);

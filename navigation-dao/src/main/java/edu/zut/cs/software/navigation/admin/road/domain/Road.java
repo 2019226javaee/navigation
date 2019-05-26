@@ -9,6 +9,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import edu.zut.cs.software.navigation.admin.device.domain.Device;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 
 
@@ -44,5 +45,9 @@ public class Road extends BaseEntity{
 	}
 	public void setlength(float length) {
 		this.length=length;
+	}
+	public void setParent(Road road) {
+		// TODO Auto-generated method stub
+		
 	}
 }
