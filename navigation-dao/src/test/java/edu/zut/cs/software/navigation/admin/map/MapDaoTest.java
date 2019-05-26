@@ -15,10 +15,10 @@ public class MapDaoTest extends GenericTreeDaoTestCase<Long, Map, MapDao> {
 	
 	private static final Logger logger = LogManager.getLogger(MapDaoTest.class.getName());
 
-	@Autowired
+	
 	MapDao mapDao;
 
-	
+	@Autowired
 	public void setMapDao(MapDao mapDao) {
 		this.mapDao = mapDao;
 		this.dao = this.mapDao;
@@ -38,7 +38,7 @@ public class MapDaoTest extends GenericTreeDaoTestCase<Long, Map, MapDao> {
 			this.mapDao.save(map);
 		}
 		
-		List<Map> roots = this.mapDao.getRoot();
+		List<Shop> roots = this.mapDao.getRoot();
 		assertEquals(root_size, roots.size());
 		if (logger.isInfoEnabled()) {
 			logger.info("testGetRoot() - List<Map> roots={}", roots); 
