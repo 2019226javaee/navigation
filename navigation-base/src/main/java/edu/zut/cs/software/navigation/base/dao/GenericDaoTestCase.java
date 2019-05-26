@@ -12,7 +12,7 @@ import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 /**
  */
 @ContextConfiguration(locations = { "classpath:/applicationContextTest-resources.xml",
-		"classpath:/applicationContext-dao.xml" })
+"classpath:/applicationContext-dao.xml" })
 public class GenericDaoTestCase<PK extends Serializable, T extends BaseEntity, D extends GenericDao<T, PK>>
 		extends BaseAbstractTestCase {
 

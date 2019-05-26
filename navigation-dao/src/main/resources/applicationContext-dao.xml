@@ -10,5 +10,5 @@
 
 	<!-- Activates scanning of @Repository -->
 	<jpa:repositories
-		base-package="edu.zut.cs.software.navigation.**.dao" />
+		base-package="edu.zut.cs.software.navigation.**.dao" entity-manager-factory-ref="entityManagerFactory"/>
 </beans>
