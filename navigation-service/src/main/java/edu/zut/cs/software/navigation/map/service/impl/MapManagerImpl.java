@@ -1,6 +1,10 @@
 package edu.zut.cs.software.navigation.map.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Component;
 
 import edu.zut.cs.software.navigation.admin.map.dao.MapDao;
@@ -16,7 +20,21 @@ public class MapManagerImpl extends GenericTreeManagerImpl<Map, Long> implements
     @Autowired
     public void setMapDao(MapDao mapDao) {
         this.mapDao = mapDao;
-        this.dao = this.mapDao;
+        this.treeDao = this.mapDao;
         this.dao = this.treeDao;
     }
+    
+    @Override
+    public List<Map> findbyMapname(String mapname){
+    	Map queryObject = new Map();
+		queryObject.setName(mapname);
+		queryObject.setDateCreated(null);
+		queryObject.setDateModified(null);
+		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("mapname", ExampleMatcher.GenericPropertyMatchers.startsWith());
+		Example<Map> example = Example.of(queryObject,matcher);
+		List<Map> result = this.dao.findAll(example);
+		return result;
+    }
+    
+   
 }
