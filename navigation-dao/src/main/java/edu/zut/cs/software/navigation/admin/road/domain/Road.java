@@ -1,18 +1,24 @@
 package edu.zut.cs.software.navigation.admin.road.domain;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import edu.zut.cs.software.navigation.base.domain.BaseEntity;
+
+import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 
 
 @Entity
 @Table(name= "N_Road")
-@NamedQueries(value = { @NamedQuery(name = "Road.getmap", query = "select m from Road m") })
-public class Road extends BaseEntity{
+@NamedQueries(value = { @NamedQuery(name = "Road.getRoot", query = "select m from Road m") })
+public class Road extends BaseTreeEntity<Road>{
 
 	/**
 	 * 
@@ -21,7 +27,9 @@ public class Road extends BaseEntity{
 	
 	
 	
-	
+	@OneToMany(mappedBy = "road", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	Set<Route> routes;
+
 	@Column(name="Name")
 	String name;
 	
