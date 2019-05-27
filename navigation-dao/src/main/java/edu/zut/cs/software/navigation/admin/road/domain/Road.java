@@ -2,14 +2,9 @@ package edu.zut.cs.software.navigation.admin.road.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
-import edu.zut.cs.software.navigation.admin.device.domain.Device;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 
 
