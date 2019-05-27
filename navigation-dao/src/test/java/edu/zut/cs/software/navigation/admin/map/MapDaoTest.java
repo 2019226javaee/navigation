@@ -38,7 +38,7 @@ public class MapDaoTest extends GenericTreeDaoTestCase<Long, Map, MapDao> {
 			this.mapDao.save(map);
 		}
 		
-		List<Shop> roots = this.mapDao.getRoot();
+		List<Map> roots = this.mapDao.getRoot();
 		assertEquals(root_size, roots.size());
 		if (logger.isInfoEnabled()) {
 			logger.info("testGetRoot() - List<Map> roots={}", roots); 
