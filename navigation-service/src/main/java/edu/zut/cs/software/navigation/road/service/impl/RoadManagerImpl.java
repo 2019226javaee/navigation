@@ -12,9 +12,12 @@ import edu.zut.cs.software.navigation.road.service.RoadManager;
 public abstract  class RoadManagerImpl extends GenericManagerImpl<Road, Long> implements RoadManager{
 
 	RoadDao roadDao;
-	
+	@Override
+	public Road findbyRoadname(String roadname) {
+		return null;
+	}
 	@Autowired
-	public void setPlaceDao( RoadDao roadDao) {
+	public void setRoadDao( RoadDao roadDao) {
 		this.roadDao = roadDao;
 		this.dao = this.roadDao;
 	}

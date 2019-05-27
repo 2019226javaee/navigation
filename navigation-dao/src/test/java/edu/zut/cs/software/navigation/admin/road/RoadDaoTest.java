@@ -10,9 +10,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import edu.zut.cs.software.navigation.admin.road.dao.RoadDao;
 import edu.zut.cs.software.navigation.admin.road.domain.Road;
-import edu.zut.cs.software.navigation.base.dao.GenericDaoTestCase;
+import edu.zut.cs.software.navigation.base.dao.GenericTreeDaoTestCase;
 
-public class RoadDaoTest extends GenericDaoTestCase<Long, Road, RoadDao>{
+public class RoadDaoTest extends GenericTreeDaoTestCase<Long, Road, RoadDao>{
 	
 	@Autowired
 	RoadDao roadDao;
