@@ -12,7 +12,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 /*
@@ -25,13 +24,15 @@ import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 @Entity
 @Table(name = "N_Routes")
-@NamedQueries({ @NamedQuery(name = "Routes.getRoot", query = "select m from Route m where m.parent is null") })
+@NamedQueries({ @NamedQuery(name = "Routes.getRoot", query = "select m from Routes m where m.parent is null") })
 public class Routes extends BaseTreeEntity<Routes> {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 514354346389706981L;
+	private static final long serialVersionUID = 3111061350105299632L;
+
+	
 
 
 	@OneToMany(mappedBy = "routes", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
