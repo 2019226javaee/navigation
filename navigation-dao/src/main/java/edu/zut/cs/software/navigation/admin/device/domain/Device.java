@@ -6,7 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import edu.zut.cs.software.navigation.admin.device.domain.Driver;
+import edu.zut.cs.software.navigation.admin.device.domain.Keeper;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 
 @Table(name= "N_Device")
@@ -40,6 +40,6 @@ public class Device extends BaseEntity {
 		
 	}
 	@ManyToOne
-	@JoinColumn(name = "Driver_ID")
-	Driver driver;
+	@JoinColumn(name = "Keeper_ID")
+	Keeper keeper;
 }

@@ -13,17 +13,17 @@ import javax.persistence.Table;
 
 import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
-@Table(name = "N_Driver")
+@Table(name = "N_Keeper")
 @Entity
-@NamedQueries({ @NamedQuery(name = "Driver.getRoot", query = "select d from Driver d where d.parent is null") })
+@NamedQueries({ @NamedQuery(name = "Keeper.getRoot", query = "select k from Keeper k where k.parent is null") })
 
-public class Driver extends BaseTreeEntity<Driver> {
+public class Keeper extends BaseTreeEntity<Keeper> {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@OneToMany(mappedBy = "driver", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "keeper", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	Set<Device> devices;
 	
 	@Column(name = "Name")
