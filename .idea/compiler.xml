@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="navigation-service" />
+        <module name="navigation-web" />
+        <module name="navigation-dao" />
+        <module name="navigation-base" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="navigation" target="1.8" />
+      <module name="navigation-base" target="1.8" />
+      <module name="navigation-dao" target="1.8" />
+      <module name="navigation-service" target="1.8" />
+      <module name="navigation-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
