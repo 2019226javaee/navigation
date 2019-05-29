@@ -3,8 +3,17 @@ package edu.zut.cs.software.navigation.admin.car.domain;
 import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
-import javax.persistence.*;
 import java.util.Set;
+
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /*
  * 司机

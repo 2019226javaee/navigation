@@ -1,7 +1,11 @@
 package edu.zut.cs.software.navigation.admin.car.domain;
 
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
-import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import javax.persistence.*;
 
