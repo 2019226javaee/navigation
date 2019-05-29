@@ -28,3 +28,4 @@ private static final Logger logger = LogManager.getLogger(PlaceDaoTest.class.get
 		}	
 	}
 }
+
