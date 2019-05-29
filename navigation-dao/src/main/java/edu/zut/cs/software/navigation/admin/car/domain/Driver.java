@@ -13,7 +13,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "N_Driver")
-@NamedQueries({ @NamedQuery(name = "Driver.getRoot", query = "select m from Driver m where m.parent is null") })
 public class Driver extends BaseTreeEntity<Driver> {
 
 
@@ -24,12 +23,13 @@ public class Driver extends BaseTreeEntity<Driver> {
     Set<Place> cars;
 
     @Column(name = "Name")
-    private
     String name;
 
     @Column(name = "Sex")
-    private
     String sex;
+
+
+
     public String getName() {
         return name;
     }
