@@ -23,12 +23,12 @@ public class LocationsManagerImpl extends GenericManagerImpl<Locations, Long> im
 
 
 	@Override
-	public List<Locations> findbyzuobiao(String name) {
+	public List<Locations> findbyName(String locations_name) {
 		Locations queryObject = new Locations();
-		queryObject.setName(name);
+		queryObject.setName(locations_name);
 		queryObject.setDateCreated(null);
 		queryObject.setDateModified(null);
-		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("placename", ExampleMatcher.GenericPropertyMatchers.startsWith());
+		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("locations_name", ExampleMatcher.GenericPropertyMatchers.startsWith());
 		Example<Locations> example = Example.of(queryObject,matcher);
 		List<Locations> result = this.dao.findAll(example);
 		return result;

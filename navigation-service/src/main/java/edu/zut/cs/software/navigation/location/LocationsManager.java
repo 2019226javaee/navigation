@@ -10,7 +10,7 @@ public interface LocationsManager extends GenericManager<Locations, Long> {
 
 	
 	//通过地点名称查找地点
-	List<Locations> findbyzuobiao(String name);
+	List<Locations> findbyName(String name);
 	
 	
 	

@@ -8,7 +8,7 @@ import edu.zut.cs.software.navigation.admin.location.domain.Routes;
 import edu.zut.cs.software.navigation.admin.map.domain.Map;
 
 public interface RoutesManager extends GenericTreeManager<Routes, Long> {
-	List<Routes> findbyname(String name);
+	List<Routes> findbyName(String name);
 
 	
 }

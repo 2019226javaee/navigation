@@ -27,9 +27,9 @@ public class RoutesManagerImpl extends GenericTreeManagerImpl<Routes, Long> impl
     
     
 	@Override
-	public List<Routes> findbyname(String name) {
+	public List<Routes> findbyName(String routesname) {
 		Routes queryObject = new Routes();
-		queryObject.setName(name);
+		queryObject.setName(routesname);
 		queryObject.setDateCreated(null);
 		queryObject.setDateModified(null);
 		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("routesname", ExampleMatcher.GenericPropertyMatchers.startsWith());
