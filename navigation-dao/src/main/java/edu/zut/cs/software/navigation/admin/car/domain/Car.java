@@ -16,7 +16,6 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "N_Car")
-@NamedQueries({ @NamedQuery(name = "Car.getcar", query = "select m from Car m") })
 public class Car extends BaseEntity{
     private static final long serialVersionUID = 4544984464660125071L;
 

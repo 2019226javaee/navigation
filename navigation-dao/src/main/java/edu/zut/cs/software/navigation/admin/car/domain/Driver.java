@@ -1,6 +1,5 @@
 package edu.zut.cs.software.navigation.admin.car.domain;
 
-import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 import java.util.Set;
@@ -11,7 +10,8 @@ import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,6 +22,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "N_Driver")
+@NamedQueries({ @NamedQuery(name = "Car.getRoot", query = "select m from Car m where m.parent is null") })
 public class Driver extends BaseTreeEntity<Driver> {
 
 
@@ -29,7 +30,7 @@ public class Driver extends BaseTreeEntity<Driver> {
 
 
     @OneToMany(mappedBy = "driver", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    Set<Place> cars;
+    Set<Car> cars;
 
     @Column(name = "Name")
     String name;
