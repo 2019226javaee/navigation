@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2522bc2d-c135-49a7-9665-4eabd7c2e752" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/navigation-dao/src/test/java/edu/zut/cs/software/navigation/admin/map/PlaceDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/navigation-dao/src/test/java/edu/zut/cs/software/navigation/admin/map/PlaceDaoTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="2522bc2d-c135-49a7-9665-4eabd7c2e752" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/navigation-dao/target/" />
@@ -25,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/navigation-dao/src/test/java/edu/zut/cs/software/navigation/admin/map/MapDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/navigation-dao/src/test/java/edu/zut/cs/software/navigation/admin/car/CarDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            <state relative-caret-position="190">
+              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/navigation-dao/src/main/java/edu/zut/cs/software/navigation/admin/car/domain/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/navigation-dao/src/main/java/edu/zut/cs/software/navigation/admin/map/domain/Map.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="333">
-              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#0#42#1" expanded="true" />
@@ -178,7 +176,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="980" />
@@ -191,149 +189,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="car" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="navigation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,8 +286,16 @@
       <workItem from="1559021119623" duration="4796000" />
       <workItem from="1559028241614" duration="2839000" />
       <workItem from="1559031116336" duration="5396000" />
-      <workItem from="1559090176466" duration="634000" />
+      <workItem from="1559090176466" duration="841000" />
     </task>
+    <task id="LOCAL-00001" summary="20190529">
+      <created>1559090821732</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559090821732</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -455,11 +319,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13665000" />
+    <option name="totallyTimeSpent" value="13872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16353887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -775,7 +638,7 @@
     <entry file="file://$PROJECT_DIR$/navigation-dao/src/main/java/edu/zut/cs/software/navigation/admin/map/domain/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#0#42#1" expanded="true" />
@@ -786,7 +649,7 @@
     <entry file="file://$PROJECT_DIR$/navigation-dao/src/test/java/edu/zut/cs/software/navigation/admin/map/MapDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -806,7 +669,7 @@
     <entry file="file://$PROJECT_DIR$/navigation-dao/src/main/java/edu/zut/cs/software/navigation/admin/car/domain/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -815,8 +678,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/navigation-dao/src/test/java/edu/zut/cs/software/navigation/admin/car/CarDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="190">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 
 *.iml;*.idea;*.gitignore;*.sh;*.classpath;*.project;*.settings;target;
+=======
+/target/
+/.settings/
+.classpath
+.project
+>>>>>>> 8adae3a53d4ac974f5e2ef05ce9408d4edd191a6
