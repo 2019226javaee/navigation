@@ -11,15 +11,14 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import edu.zut.cs.software.navigation.admin.offset.domain.Point;
 import edu.zut.cs.software.navigation.base.domain.BaseTreeEntity;
 
 /*
  * 地图
  * 一对多
  */
-
-
-
 @Entity
 @Table(name = "N_Offset")
 @NamedQueries({ @NamedQuery(name = "Offset.getRoot", query = "select m from Offset m where m.parent is null") })
@@ -32,8 +31,7 @@ public class Offset extends BaseTreeEntity<Offset> {
 
 
 	@OneToMany(mappedBy = "offset", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-	
-
+	Set<Point> points;
 	@Column(name = "Name")
 	String name;
 
@@ -44,7 +42,7 @@ public class Offset extends BaseTreeEntity<Offset> {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setname(String name) {
 		this.name = name;
 	}
 

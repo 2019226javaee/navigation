@@ -34,6 +34,7 @@ public class OffsetDaoTest extends GenericTreeDaoTestCase<Long, Offset, OffsetDa
 			for(int j = 0; j < 10; j++) {
 				Offset m = new Offset();
 				m.setName("offset_" + i + "_" + j);
+				m.setParent(offset);
 			}
 			this.offsetDao.save(offset);
 		}
