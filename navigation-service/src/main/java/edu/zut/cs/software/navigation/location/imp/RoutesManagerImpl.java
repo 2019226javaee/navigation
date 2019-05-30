@@ -11,7 +11,6 @@ import edu.zut.cs.software.navigation.admin.location.dao.RoutesDao;
 import edu.zut.cs.software.navigation.admin.location.domain.Routes;
 import edu.zut.cs.software.navigation.base.service.impl.GenericTreeManagerImpl;
 import edu.zut.cs.software.navigation.location.RoutesManager;
-import edu.zut.cs.software.navigation.map.service.MapManager;
 
 @Component
 public class RoutesManagerImpl extends GenericTreeManagerImpl<Routes, Long> implements RoutesManager{
@@ -27,9 +26,9 @@ public class RoutesManagerImpl extends GenericTreeManagerImpl<Routes, Long> impl
     
     
 	@Override
-	public List<Routes> findbyname(String name) {
+	public List<Routes> findbyName(String routesname) {
 		Routes queryObject = new Routes();
-		queryObject.setName(name);
+		queryObject.setName(routesname);
 		queryObject.setDateCreated(null);
 		queryObject.setDateModified(null);
 		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("routesname", ExampleMatcher.GenericPropertyMatchers.startsWith());

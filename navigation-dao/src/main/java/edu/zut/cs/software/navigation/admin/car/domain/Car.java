@@ -41,7 +41,7 @@ public class Car extends BaseEntity{
         return shunfengcar;
     }
 
-    public void setShunfengcar(String sunfengcar) {
+    public void setShunfengcar(String shunfengcar) {
         this.shunfengcar = shunfengcar;
     }
 
