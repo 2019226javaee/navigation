@@ -17,13 +17,13 @@ public class PlaceDaoTest extends GenericDaoTestCase<Long, Place, PlaceDao>{
 	
 	@Autowired
 	PlaceDao placeDao;
-	
+
 	@Test
 	public void testFindAll() {
-		
+
 		List<Place> all = this.placeDao.findAll();
 		if (logger.isInfoEnabled()) {
-			logger.info("testFindAll() - List<place> all={}", all); 
-		}	
+			logger.info("testFindAll() - List<place> all={}", all);
+		}
 	}
 }

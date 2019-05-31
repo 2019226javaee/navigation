@@ -3,10 +3,11 @@ package edu.zut.cs.software.navigation.base.service.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
-
 import edu.zut.cs.software.navigation.base.dao.GenericDao;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 import edu.zut.cs.software.navigation.base.service.GenericManager;
@@ -26,7 +27,7 @@ import edu.zut.cs.software.navigation.base.service.GenericManager;
  */
 @Transactional
 public class GenericManagerImpl<T extends BaseEntity, PK extends Serializable> implements GenericManager<T, PK> {
-
+	protected static final Logger logger = LogManager.getLogger(GenericManagerImpl.class.getName());
 	protected GenericDao<T, PK> dao;
 
 	public void delete(PK id) {
