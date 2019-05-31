@@ -43,12 +43,13 @@ public class DriverDaoTest extends GenericTreeDaoTestCase<Long, Driver,DriverDao
                 d.setParent(driver);
             }
             this.driverDao.save(driver);
-            List<Driver>roots = this.driverDao.getRoot();
-            assertEquals(root_size, roots.size());
-            if (logger.isInfoEnabled()) {
-                logger.info("testGetRoot() - List<Driver> roots={}", roots);
-            }
+            
 
+        }
+        List<Driver> roots = this.driverDao.getRoot();
+        assertEquals(root_size, roots.size());
+        if (logger.isInfoEnabled()) {
+            logger.info("testGetRoot() - List<Driver> roots={}", roots);
         }
     }
 

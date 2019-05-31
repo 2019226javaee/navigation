@@ -42,7 +42,7 @@ public class Offset extends BaseTreeEntity<Offset> {
 		return name;
 	}
 
-	public void setname(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 

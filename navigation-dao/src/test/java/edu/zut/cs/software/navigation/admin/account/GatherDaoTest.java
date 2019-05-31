@@ -35,7 +35,7 @@ public class GatherDaoTest extends GenericTreeDaoTestCase<Long, Gather, GatherDa
 		}
 
 		List<Gather> roots = this.gatherDao.getRoot();
-		//assertEquals(root_size, roots.size());
+		assertEquals(root_size, roots.size());
 
 		if (logger.isInfoEnabled()) {
 			logger.info("testGetRoot() - List<Gather> roots=" + roots); //$NON-NLS-1$

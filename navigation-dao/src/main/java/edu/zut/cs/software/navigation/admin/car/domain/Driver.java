@@ -22,7 +22,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "N_Driver")
-@NamedQueries({ @NamedQuery(name = "Car.getRoot", query = "select m from Car m where m.parent is null") })
+@NamedQueries({ @NamedQuery(name = "Driver.getRoot", query = "select m from Driver m where m.parent is null") })
 public class Driver extends BaseTreeEntity<Driver> {
 
 
