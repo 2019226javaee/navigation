@@ -7,6 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import edu.zut.cs.software.navigation.admin.device.domain.Keeper;
+import edu.zut.cs.software.navigation.admin.map.domain.Map;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 
 @Table(name= "N_Device")
@@ -38,6 +39,13 @@ public class Device extends BaseEntity {
 	public void setParent(Device device) {
 		// TODO Auto-generated method stub
 		
+	}
+	public Keeper getKeeper() {
+		return keeper;
+	}
+
+	public void setKeeper(Keeper keeper) {
+		this.keeper = keeper;
 	}
 	@ManyToOne
 	@JoinColumn(name = "Keeper_ID")
