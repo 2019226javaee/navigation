@@ -6,7 +6,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import edu.zut.cs.software.navigation.admin.map.domain.Map;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 /*
  * 地点
@@ -40,7 +39,7 @@ public class Locations extends BaseEntity {
 	}
 
 	public void setX(Integer leftlocation) {
-		this.X = X;
+		this.X = leftlocation;
 	}
 
 	public String getName() {
