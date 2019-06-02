@@ -5,5 +5,6 @@ import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.dao.GenericDao;
 
 public interface LocationsDao  extends GenericDao<Locations, Long> {
-
+			
+			void creatRoutes();
 }
