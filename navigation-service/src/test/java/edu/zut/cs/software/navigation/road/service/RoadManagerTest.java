@@ -27,23 +27,20 @@ public class RoadManagerTest extends GenericTreeManagerTestCase<Long, Road, Road
 		this.manager = this.roadManager;
 	}
 	
-	@Test
-	public void testAddRoad() {
-		for (int i = 0; i < 10; i++) {
-			Road road = new Road();
-			road.setname("road_" + i);
-			road = this.roadManager.save(road);
-			for (int j = 0; j < 10; j++) {
-				Road subgroup = new Road();
-				subgroup.setname("subgroup_" + i + "_" + j);
-				subgroup.setParent(road);
-				subgroup = this.roadManager.save(subgroup);
-			}
-		}
+	@Override
+	public void setUp()  {
+		Road m = new Road();
+		m.setname("太湖路");
+		this.entity = this.manager.save(m);
+	}
+    
+    @Test
+	public void findbyMapname() {
+		List<Road> result = this.roadManager.findbyRoadname("太湖路");
+        assertNotNull(result);
+        Assert.assertEquals(1, result.size());
+        Assert.assertEquals("太湖路", result.get(0).getname());
+        
 		
-		List<Road> rootRoadList = this.roadManager.getRoot();
-		assertNotNull(rootRoadList);
-		Assert.assertEquals(110, rootRoadList.size());
-
 	}
 }
