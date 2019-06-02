@@ -27,23 +27,20 @@ public class OffsetManagerTest extends GenericTreeManagerTestCase<Long, Offset, 
 		this.manager = this.offsetManager;
 	}
 	
-	@Test
-	public void testAddOffset() {
-		for (int i = 0; i < 10; i++) {
-			Offset offset = new Offset();
-			offset.setName("offset_" + i);
-			offset = this.offsetManager.save(offset);
-			for (int j = 0; j < 10; j++) {
-				Offset subgroup = new Offset();
-				subgroup.setName("subgroup_" + i + "_" + j);
-				subgroup.setParent(offset);
-				subgroup = this.offsetManager.save(subgroup);
-			}
-		}
+	@Override
+	public void setUp()  {
+		Offset m = new Offset();
+		m.setName("变量");
+		this.entity = this.manager.save(m);
+	}
+    
+    @Test
+	public void findbyMapname() {
+		List<Offset> result = this.offsetManager.findbyOffsetname("变量");
+        assertNotNull(result);
+        Assert.assertEquals(1, result.size());
+        Assert.assertEquals("变量", result.get(0).getName());
+        
 		
-		List<Offset> rootOffsetList = this.offsetManager.getRoot();
-		assertNotNull(rootOffsetList);
-		Assert.assertEquals(110, rootOffsetList.size());
-
 	}
 }
