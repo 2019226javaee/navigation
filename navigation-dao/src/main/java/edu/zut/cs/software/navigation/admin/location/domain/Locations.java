@@ -39,7 +39,7 @@ public class Locations extends BaseEntity {
 		return X;
 	}
 
-	public void setX(String leftlocation) {
+	public void setX(Integer leftlocation) {
 		this.X = X;
 	}
 
