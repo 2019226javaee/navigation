@@ -23,7 +23,7 @@ public class MapManagerTest extends GenericTreeManagerTestCase<Long, Map, MapMan
     }
     
     @Autowired
-	public void setPlaceManager(MapManager mapManager) {
+	public void setMapManager(MapManager mapManager) {
 		this.mapManager = mapManager;
 		this.manager = this.mapManager;
 	}

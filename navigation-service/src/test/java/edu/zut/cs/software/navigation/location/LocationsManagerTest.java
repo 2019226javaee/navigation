@@ -10,40 +10,42 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.zut.cs.software.navigation.admin.location.domain.Locations;
-import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.service.GenericManagerTestCase;
-import edu.zut.cs.software.navigation.map.service.PlaceManager;
 
-public class LoationsManagerTest extends GenericManagerTestCase<Long, Locations, LocationsManager>{
+public class LocationsManagerTest extends GenericManagerTestCase<Long, Locations, LocationsManager>{
+
+	
+
+
 
 	LocationsManager locationsManager;
-	public LoationsManagerTest() {
+	public LocationsManagerTest() {
 		super(Locations.class);
+		
 	}
 	
+	
 	@Autowired
-	public void setLoationsManager(LocationsManager locationsManager) {
+	public void setLocationsManager(LocationsManager locationsManager) {
 		this.locationsManager = locationsManager;
 		this.manager = this.locationsManager;
 	}
 
 	@Override
 	public void setUp()  {
-		Locations locations = new Locations();
-		locations.setName("图书馆");
-		locations.setX(3);
-		locations.setY(6);
-		this.entity = this.manager.save(locations);
+		Locations l = new Locations();
+		l.setName("餐厅");
+		this.entity = this.manager.save(l);
 	}
 	
 	
 	
 	@Test
-	public void findbyPlacename() {
-		List<Locations> result = this.locationsManager.findbyLocationsName("图书馆");
+	public void findbyLocationsName() {
+		List<Locations> result = this.locationsManager.findbyLocationsName("餐厅");
         assertNotNull(result);
         Assert.assertEquals(1, result.size());
-        Assert.assertEquals("图书馆", result.get(0).getName());
+        Assert.assertEquals("餐厅", result.get(0).getName());
         
 		
 	}

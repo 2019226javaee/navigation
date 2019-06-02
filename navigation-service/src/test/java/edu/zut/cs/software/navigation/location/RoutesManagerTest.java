@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.zut.cs.software.navigation.admin.location.domain.Routes;
-import edu.zut.cs.software.navigation.admin.map.domain.Map;
 import edu.zut.cs.software.navigation.base.service.GenericTreeManagerTestCase;
 
 public class RoutesManagerTest extends GenericTreeManagerTestCase<Long, Routes, RoutesManager> {
