@@ -1,4 +1,4 @@
-package edu.zut.cs.software.navigation.location.imp;
+package edu.zut.cs.software.navigation.location.impl;
 
 import java.util.List;
 

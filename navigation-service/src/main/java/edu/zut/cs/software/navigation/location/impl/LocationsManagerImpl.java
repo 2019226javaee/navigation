@@ -1,4 +1,4 @@
-package edu.zut.cs.software.navigation.location.imp;
+package edu.zut.cs.software.navigation.location.impl;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class LocationsManagerImpl extends GenericManagerImpl<Locations, Long> im
 
 
 	@Override
-	public List<Locations> findbyName(String locations_name) {
+	public List<Locations> findbyLocationsName(String locations_name) {
 		Locations queryObject = new Locations();
 		queryObject.setName(locations_name);
 		queryObject.setDateCreated(null);
