@@ -2,7 +2,9 @@ package edu.zut.cs.software.navigation.map.web.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.web.spring.controller.GenericController;
@@ -19,4 +21,15 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         this.placeManager = placeManager;
         this.manager = this.placeManager;
     }
+    @RequestMapping("/index")
+    public String index() {
+        return "place/index";
+    }
+
+    @ResponseBody
+    @GetMapping(value = "hello", produces = "application/json;charset=utf-8")
+    public String hello() {
+        return "Hello, This is Place!";
+    }
+
 }
