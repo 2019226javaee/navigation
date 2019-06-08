@@ -32,4 +32,9 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         return "Hello, This is Place!";
     }
 
+    @RequestMapping("/helloworld")
+    public String hellow() {
+    	System.out.println("hello world");
+    	return "success";
+    }
 }

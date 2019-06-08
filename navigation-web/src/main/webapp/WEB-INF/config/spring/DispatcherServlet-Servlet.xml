@@ -15,13 +15,15 @@
 	<!-- 自动搜索@Controller标注的类 -->
 	<context:component-scan
 		base-package="edu.zut.cs.software.navigation.**.controller" />
+	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> 
+    </context:component-scan>
 	
 	<!--注解驱动，映射器，适配器等注解 -->
     <mvc:annotation-driven/>
 
     <!-- Html视图解析器 -->
     <bean id="htmlViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/html/"/>
+        <property name="prefix" value="/WEB-INF/page/html/"/>
         <property name="suffix" value=".html"/>
         <property name="contentType" value="text/html;charset=utf-8"/>
     </bean>
@@ -29,11 +31,11 @@
     <!-- 资源路径映射 -->
     <mvc:resources mapping="/html/**" location="/WEB-INF/pages/html/"/>
     <mvc:resources mapping="/js/**" location="/WEB-INF/resources/js/"/>
-    <!--<mvc:resources mapping="/css/**" location="/WEB-INF/resources/css/"/>
+    <mvc:resources mapping="/css/**" location="/WEB-INF/resources/css/"/>
     <mvc:resources mapping="/lib/**" location="/WEB-INF/resources/lib/"/>
     <mvc:resources mapping="/img/**" location="/WEB-INF/resources/img/"/>
     <mvc:resources mapping="/error/**" location="/WEB-INF/pages/error/"/>
-    <mvc:resources mapping="/fonts/**" location="/WEB-INF/resources/fonts/"/>-->
+    <mvc:resources mapping="/fonts/**" location="/WEB-INF/resources/fonts/"/>
 
     <!-- 配置无Controller的URL 返回视图名字 -->
     <mvc:view-controller path="/" view-name="index"/>
