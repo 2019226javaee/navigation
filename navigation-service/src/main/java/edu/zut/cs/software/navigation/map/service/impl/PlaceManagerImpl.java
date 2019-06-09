@@ -2,17 +2,22 @@ package edu.zut.cs.software.navigation.map.service.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import edu.zut.cs.software.navigation.admin.map.dao.PlaceDao;
 import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.service.impl.GenericManagerImpl;
 import edu.zut.cs.software.navigation.map.service.PlaceManager;
 
+@Service("PlaceManager")
 @Component
+@Transactional
 public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements PlaceManager{
 
 	PlaceDao placeDao;

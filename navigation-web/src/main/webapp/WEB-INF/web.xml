@@ -11,6 +11,20 @@
   <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+   <!-- 配置字符编码过滤器，一定要在前面配置 -->
+    <filter>
+        <filter-name>encoding-filter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding-filter</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <!-- 对所有进行过滤，强制转换UTF-8 -->
+    <filter-mapping>
+        <filter-name>encoding-filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
   <!--配置dispatcherServlet -->
   <servlet>
         <servlet-name>DispatcherServlet</servlet-name>
@@ -19,13 +33,17 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <!-- 加载mvc配置文件 -->
-            <param-value>/WEB-INF/config/spring/spring-servlet.xml</param-value>
+            <param-value>/WEB-INF/config/spring/DispatcherServlet-Servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
 
     <!-- 响应不同的url -->
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>*.html</url-pattern>
@@ -49,6 +67,6 @@
 		<url-pattern>/resources/*</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>main/index.html</welcome-file>
+		<welcome-file>/html/index.html</welcome-file>
 	</welcome-file-list>
 </web-app>
