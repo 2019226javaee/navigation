@@ -15,13 +15,18 @@ import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.service.impl.GenericManagerImpl;
 import edu.zut.cs.software.navigation.map.service.PlaceManager;
 
-@Service("PlaceManager")
+@Service("placeManager")
 @Component
 @Transactional
 public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements PlaceManager{
 
 	PlaceDao placeDao;
 	
+	@Autowired
+	public void setPlaceDao(PlaceDao placeDao) {
+		this.placeDao = placeDao;
+		this.dao = this.placeDao;
+	}
 	
 	@Override
 	public List<Place> findbyPlacename(String placename) {
@@ -41,9 +46,5 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 		return null;
 	}
 	
-	@Autowired
-	public void setPlaceDao(PlaceDao placeDao) {
-		this.placeDao = placeDao;
-		this.dao = this.placeDao;
-	}
+	
 }

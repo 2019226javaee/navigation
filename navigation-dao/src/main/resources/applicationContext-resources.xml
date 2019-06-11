@@ -60,8 +60,8 @@
 	<bean id="jpaDialect"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
 
-	<!--<bean id="sessionFactory" factory-bean="entityManagerFactory"
-		factory-method="getSessionFactory" />-->
+	<bean id="sessionFactory" factory-bean="emf"
+		factory-method="getSessionFactory" />
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.jpa.JpaTransactionManager">

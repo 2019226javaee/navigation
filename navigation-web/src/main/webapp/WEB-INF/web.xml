@@ -33,7 +33,7 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <!-- 加载mvc配置文件 -->
-            <param-value>/WEB-INF/config/spring/DispatcherServlet-Servlet.xml</param-value>
+            <param-value>/WEB-INF/config/spring/spring-mvc.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

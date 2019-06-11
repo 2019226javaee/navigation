@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import edu.zut.cs.software.navigation.admin.map.dao.PlaceDao;
 import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.dao.GenericDaoTestCase;
@@ -15,8 +16,14 @@ public class PlaceDaoTest extends GenericDaoTestCase<Long, Place, PlaceDao>{
 
 	private static final Logger logger = LogManager.getLogger(PlaceDaoTest.class.getName());
 	
-	@Autowired
+	
 	PlaceDao placeDao;
+	
+	@Autowired
+	public void setPlaceDao(PlaceDao placeDao) {
+		this.placeDao = placeDao;
+		this.dao = this.placeDao;
+	}
 
 	@Test
 	public void testFindAll() {

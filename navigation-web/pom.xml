@@ -44,14 +44,16 @@
 		  <artifactId>jackson-databind</artifactId>
 		  <version>2.9.7</version>
 	  </dependency>
-	</dependencies>
-	
-	<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-        <dependency>
+	  
+	  <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+       <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.58</version>
-        </dependency>
+       </dependency>
+	</dependencies>
+	
+	
 	<build>
 		<plugins>
 			<plugin>

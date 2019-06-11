@@ -40,6 +40,14 @@ public class Map extends BaseTreeEntity<Map> {
 	@Column(name = "Name")
 	String name;
 
+	public Set<Place> getPlaces() {
+		return places;
+	}
+
+	public void setPlaces(Set<Place> places) {
+		this.places = places;
+	}
+
 	@Column(name = "Area")
 	String area;
 

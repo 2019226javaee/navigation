@@ -10,6 +10,6 @@
 
 	<!-- Activates scanning of @Service -->
 	<context:component-scan
-		base-package="edu.zut.cs.software" />
+		base-package="edu.zut.cs.software.navigation.*.service.impl" />
 
 </beans>

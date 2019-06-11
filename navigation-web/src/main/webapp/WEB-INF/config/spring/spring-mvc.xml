@@ -14,7 +14,7 @@
 	
 	<!-- 自动搜索@Controller标注的类 -->
 	<context:component-scan
-		base-package="edu.zut.cs.software.navigation.**.controller" />
+		base-package="edu.zut.cs.software.navigation.*.web.spring.controller" />
 	
 	<!--注解驱动，映射器，适配器等注解 -->
     <mvc:annotation-driven/>
