@@ -28,10 +28,11 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         this.placeManager = placeManager;
         this.manager = this.placeManager;
     }
-	@RequestMapping("/placedemo")
+	@RequestMapping("/index")
     public String index() {
-        return "success";
+        return "place/index";
     }
+
 
 
     @ResponseBody
@@ -42,7 +43,7 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         return JSON.toJSONString(pageInfo);
 	}
     
-    @ResponseBody//标识转换成JSON处理
+    @ResponseBody
 	@GetMapping(value = "allex",produces = "application/json;charset=utf-8")
 	public List<Place> findAllPlaceex(){
 		return this.manager.findAll();

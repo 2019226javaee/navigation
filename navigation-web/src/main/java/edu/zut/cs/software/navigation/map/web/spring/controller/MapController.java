@@ -1,5 +1,7 @@
 package edu.zut.cs.software.navigation.map.web.spring.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,12 @@ public class MapController extends GenericController<Map, Long, MapManager>{
     public String hello() {
         return "Hello, This is Map!";
     }
+    
+    @ResponseBody
+	@GetMapping(value = "all",produces = "application/json;charset=utf-8")
+	public List<Map> findAllMap(){
+		return this.manager.findAll();
+	}
 
 
 	
