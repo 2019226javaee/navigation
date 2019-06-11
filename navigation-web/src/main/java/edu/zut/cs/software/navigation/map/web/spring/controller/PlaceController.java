@@ -1,14 +1,16 @@
 package edu.zut.cs.software.navigation.map.web.spring.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.PageInfo;
 
 import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.web.spring.controller.GenericController;
@@ -33,9 +35,17 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
 
 
     @ResponseBody
-	@RequestMapping(value = "name/{name}", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
-	public String getPlace(@PathVariable String name) {
-		return JSON.toJSONString(this.placeManager.findbyPlacename(name));
+	@RequestMapping(value = "all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
+	public String findAllPlace() {
+    	List<Place> placeList = this.manager.findAll();
+        PageInfo pageInfo = new PageInfo(placeList);
+        return JSON.toJSONString(pageInfo);
+	}
+    
+    @ResponseBody//标识转换成JSON处理
+	@GetMapping(value = "allex",produces = "application/json;charset=utf-8")
+	public List<Place> findAllPlaceex(){
+		return this.manager.findAll();
 	}
 
 

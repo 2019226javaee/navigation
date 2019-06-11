@@ -9,5 +9,6 @@ import edu.zut.cs.software.navigation.admin.map.domain.Map;
 public interface MapManager extends GenericTreeManager<Map, Long> {
 	List<Map> findbyMapname(String name);
 
+	List<Map> findAll();
 	
 }

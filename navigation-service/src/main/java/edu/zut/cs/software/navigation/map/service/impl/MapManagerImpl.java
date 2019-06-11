@@ -36,5 +36,11 @@ public class MapManagerImpl extends GenericTreeManagerImpl<Map, Long> implements
 		return result;
     }
     
+    @Override
+    public List<Map> findAll(){
+    	List<Map> result = this.dao.findAll();
+    	return result;
+    }
+    
    
 }
