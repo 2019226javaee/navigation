@@ -6,6 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import edu.zut.cs.software.navigation.admin.location.domain.Locations;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 
 
@@ -33,6 +34,8 @@ public class Account extends BaseEntity {
 	String tel;
 	@Column(name = "Wall")
 	int wall;
+	@JoinColumn(name = "Location")
+	Locations location;
 	public String getSex() {
 		return sex;
 	}
@@ -53,7 +56,9 @@ public class Account extends BaseEntity {
 	public void setWall(int wall) {
 		this.wall = wall;
 	}
-
+	public Locations getLocation() {
+		return location;
+	}
 
 	public String getEmail() {
 		return email;

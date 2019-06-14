@@ -1,11 +1,14 @@
 package edu.zut.cs.software.navigation.account.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
 import edu.zut.cs.software.navigation.account.service.AccountManager;
 import edu.zut.cs.software.navigation.admin.account.dao.AccountDao;
 import edu.zut.cs.software.navigation.admin.account.daomain.Account;
+import edu.zut.cs.software.navigation.admin.location.domain.Locations;
 import edu.zut.cs.software.navigation.base.service.impl.GenericManagerImpl;
 @Service("accountManager")
 public class AccountManagerImpl extends GenericManagerImpl<Account,Long> implements AccountManager {
@@ -38,4 +41,17 @@ public class AccountManagerImpl extends GenericManagerImpl<Account,Long> impleme
 		return all;
 	}
 
+	@Override
+	public Locations findbyName(String name){
+		Account queryObject = new Account();
+		queryObject.setUsername(name);
+		queryObject.setDateCreated(null);
+		queryObject.setDateModified(null);
+		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("name", ExampleMatcher.GenericPropertyMatchers.startsWith());
+		Example<Account> example = Example.of(queryObject,matcher);
+		List<Account> result = this.dao.findAll(example);
+		Account ob = result.get(0);
+		ob.getLocation();
+		return ob.getLocation();
+	}
 }
