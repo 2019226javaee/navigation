@@ -54,4 +54,24 @@ public class AccountManagerImpl extends GenericManagerImpl<Account,Long> impleme
 		ob.getLocation();
 		return ob.getLocation();
 	}
+	
+	@Override
+	public List<Integer> CurrentLocation(String name){
+		Account queryObject = new Account();
+		queryObject.setUsername(name);
+		queryObject.setDateCreated(null);
+		queryObject.setDateModified(null);
+		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("name", ExampleMatcher.GenericPropertyMatchers.startsWith());
+		Example<Account> example = Example.of(queryObject,matcher);
+		List<Account> result = this.dao.findAll(example);
+		Account ob = result.get(0);
+		Locations current =ob.getLocation();
+		Integer x=null,y=null;
+		x=current.getX();
+		y=current.getY();
+		List<Integer> sun = null;//存放当前位置信息的容器
+		sun.add(x);
+		sun.add(y);
+		return sun;//返回当前位置信息
+	}
 }

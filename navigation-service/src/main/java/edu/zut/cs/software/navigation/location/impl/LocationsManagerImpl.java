@@ -35,5 +35,6 @@ public class LocationsManagerImpl extends GenericManagerImpl<Locations, Long> im
 		List<Locations> result = this.dao.findAll(example);
 		return result;
 	}
+
 }
 

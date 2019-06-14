@@ -8,4 +8,6 @@ public interface AccountManager extends GenericManager<Account,Long> {
 	String sayHello(String name);
 	Locations findbyName(String name);
 	List<Account> getAll();
+	
+	List<Integer> CurrentLocation(String name);
 }

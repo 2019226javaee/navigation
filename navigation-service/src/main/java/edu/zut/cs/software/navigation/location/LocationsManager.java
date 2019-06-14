@@ -13,5 +13,4 @@ public interface LocationsManager extends GenericManager<Locations, Long> {
 	
 	
 	
-	
 }
