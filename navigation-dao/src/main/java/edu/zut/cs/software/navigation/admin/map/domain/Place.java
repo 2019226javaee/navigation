@@ -35,26 +35,7 @@ public class Place extends BaseEntity {
 	@Column(name="Name")
 	String name;
 	
-	public String getLeftlocation() {
-		return leftlocation;
-	}
 
-	public void setLeftlocation(String leftlocation) {
-		this.leftlocation = leftlocation;
-	}
-
-	public String getRightlocation() {
-		return rightlocation;
-	}
-
-	public void setRightlocation(String rightlocation) {
-		this.rightlocation = rightlocation;
-	}
-
-	@Column(name="LLocation")
-	String leftlocation;
-	@Column(name="RLocation")
-	String rightlocation;
 	public Map getMap() {
 		return map;
 	}
@@ -62,6 +43,31 @@ public class Place extends BaseEntity {
 	public void setMap(Map map) {
 		this.map = map;
 	}
+
+	@Column(name="LocationX")
+	String x;
+	public String getX() {
+		return x;
+	}
+
+	public void setX(String x) {
+		this.x = x;
+	}
+
+	public String getY() {
+		return y;
+	}
+
+	public void setY(String y) {
+		this.y = y;
+	}
+
+
+
+	@Column(name="LocationY")
+	String y;
+
+
 
 	@ManyToOne
 	@JoinColumn(name = "MAP_ID")

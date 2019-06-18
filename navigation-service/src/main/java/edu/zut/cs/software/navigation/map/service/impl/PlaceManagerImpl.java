@@ -1,5 +1,6 @@
 package edu.zut.cs.software.navigation.map.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -19,7 +20,7 @@ import edu.zut.cs.software.navigation.map.service.PlaceManager;
 @Component
 @Transactional
 public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements PlaceManager{
-
+	
 	PlaceDao placeDao;
 	
 	@Autowired
@@ -44,6 +45,20 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 	@Override
 	public List<Place> findbyLocation(String left,String right){
 		return null;
+	}
+	@Override
+	public List<String> findPlaceLocation(String name){
+		Place queryObject = new Place();
+		queryObject.setName(name);
+		queryObject.setDateCreated(null);
+		queryObject.setDateModified(null);
+		ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("name", ExampleMatcher.GenericPropertyMatchers.startsWith());
+		Example<Place> example = Example.of(queryObject,matcher);
+		List<Place> result = this.dao.findAll(example);
+		List<String> de = new ArrayList<String>();
+		de.add(result.get(0).getX());
+		de.add(result.get(0).getY());
+		return de;
 	}
 	
 	

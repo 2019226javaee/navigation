@@ -33,6 +33,7 @@ public class Locations extends BaseEntity {
 	@ManyToOne
 	@JoinColumn(name = "Route_ID")
 	Routes routes;
+	
 
 	public Integer getX() {
 		return X;
