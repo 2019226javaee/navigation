@@ -60,6 +60,15 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 		de.add(result.get(0).getY());
 		return de;
 	}
+	@Override
+	public void deleteById(Long id) {
+		dao.deleteById(id);
+	}
 	
+	@Override
+	public void updateById(Long id,String name) {
+		Place place = dao.getOne(id);
+		place.setName(name);
+	}
 	
 }

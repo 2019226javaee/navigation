@@ -30,11 +30,6 @@ public class PlaceManagerTest extends GenericManagerTestCase<Long, Place, PlaceM
 
 	@Override
 	public void setUp()  {
-		Place place = new Place();
-		place.setName("图书馆");
-		place.setX("10");
-		place.setY("20");
-		this.entity = this.manager.save(place);
 	}
 	
 	
@@ -55,4 +50,5 @@ public class PlaceManagerTest extends GenericManagerTestCase<Long, Place, PlaceM
 		System.out.println(demo.get(0));
 		System.out.println(demo.get(1));
 	}
+
 }

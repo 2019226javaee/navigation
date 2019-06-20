@@ -6,7 +6,6 @@ import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.zut.cs.software.navigation.admin.location.domain.Locations;
 import edu.zut.cs.software.navigation.admin.map.domain.Map;
 import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.service.GenericGenerator;
@@ -40,9 +39,6 @@ public class MapEntityGenerator extends GenericGenerator {
 		for(int i = 1; i < 5; i++) {
 			Place p = new Place();
 			p.setName("place_" + i);
-			Locations location = new Locations();
-			location = null;
-			p.setLocation(location);
 			p.setMap(m);
 			this.placeManager.save(p);
 		}

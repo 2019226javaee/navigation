@@ -19,4 +19,7 @@ public interface PlaceManager extends GenericManager<Place, Long> {
 	//找到地点的坐标
 	List<String> findPlaceLocation(String name);
 	
+	 void deleteById(Long id);
+	 
+	 void updateById(Long id,String name);
 }

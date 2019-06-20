@@ -9,6 +9,7 @@
         	<module>navigation-service</module>
         	<module>navigation-dao</module>
         	<module>navigation-base</module>
+        	<module>navigation-client</module>
   </modules>
   <properties>
 

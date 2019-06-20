@@ -6,6 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import edu.zut.cs.software.navigation.admin.location.domain.Locations;
 import edu.zut.cs.software.navigation.admin.map.domain.Map;
 import edu.zut.cs.software.navigation.base.domain.BaseEntity;
 /*
@@ -66,6 +67,18 @@ public class Place extends BaseEntity {
 
 	@Column(name="LocationY")
 	String y;
+
+
+	@JoinColumn(name = "LOCATIONS_ID")
+	Locations location;
+
+	public Locations getLocation() {
+		return location;
+	}
+
+	public void setLocation(Locations location) {
+		this.location = location;
+	}
 
 
 
