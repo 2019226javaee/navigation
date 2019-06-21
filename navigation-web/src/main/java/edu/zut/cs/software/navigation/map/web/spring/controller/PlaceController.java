@@ -49,6 +49,14 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
 		return this.manager.findAll();
 	}
 
+    @ResponseBody
+   	@GetMapping(value = "tt",produces = "application/json;charset=utf-8")
+   	public List<Place> ttasd(){
+    	Place p = new Place();
+    	p.setName("z中原工学院");
+    	placeManager.save(p);
+   		return this.manager.findAll();
+   	}
 
 	
 }

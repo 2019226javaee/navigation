@@ -37,4 +37,8 @@
 
     <!-- 配置无Controller的URL 返回视图名字 -->
     <mvc:view-controller path="/" view-name="index"/>
+    
+    <mvc:interceptors>
+        <bean class="edu.zut.cs.software.navigation.innterceptor.ProcessInterceptor"></bean>
+    </mvc:interceptors>
 </beans>
