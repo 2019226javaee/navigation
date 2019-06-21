@@ -55,6 +55,7 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
     	Place p = new Place();
     	p.setName("z中原工学院");
     	placeManager.save(p);
+    	System.out.println("该方法已经被调用");
    		return this.manager.findAll();
    	}
 
