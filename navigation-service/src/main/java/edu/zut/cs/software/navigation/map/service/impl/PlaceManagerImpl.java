@@ -61,6 +61,24 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 		return de;
 	}
 	@Override
+	public List<Place> findbyTPlacename(String name1,String name2){
+		Place demo1 = new Place();Place demo2 = new Place(); 
+		demo1.setName(name1);demo2.setName(name2);
+		demo1.setDateModified(null);demo1.setDateCreated(null);demo2.setDateCreated(null);demo2.setDateModified(null);
+		ExampleMatcher matcher1 = ExampleMatcher.matching().withMatcher("name1", ExampleMatcher.GenericPropertyMatchers.startsWith());
+		ExampleMatcher matcher2 = ExampleMatcher.matching().withMatcher("name2", ExampleMatcher.GenericPropertyMatchers.startsWith());
+		Example<Place> example1 = Example.of(demo1,matcher1);
+		Example<Place> example2 = Example.of(demo2,matcher2);
+		List<Place> result1 = this.dao.findAll(example1);
+		List<Place> result2 = this.dao.findAll(example2);
+		List<Place> result = new ArrayList<Place>();
+		result.add(result1.get(0));result.add(result2.get(0));
+		return result;
+		
+		
+		
+	}
+	@Override
 	public void deleteById(Long id) {
 		dao.deleteById(id);
 	}

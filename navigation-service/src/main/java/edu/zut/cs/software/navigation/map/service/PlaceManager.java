@@ -11,6 +11,7 @@ public interface PlaceManager extends GenericManager<Place, Long> {
 	//通过地点名称查找地点
 	List<Place> findbyPlacename(String place);
 	
+	List<Place> findbyTPlacename(String place1,String place2);
 	
 	//通过地点编号查找地点
 	List<Place> findbyLocation(String leftlocation,String rightlocation);
