@@ -23,4 +23,8 @@ public interface PlaceManager extends GenericManager<Place, Long> {
 	 void deleteById(Long id);
 	 
 	 void updateById(Long id,String name);
+	 
+	 void updateById(Long id,String name,String llocation,String rlocation);
+	 
+	 void create(String name,String llocation,String rlocation);
 }

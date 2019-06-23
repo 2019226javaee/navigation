@@ -22,7 +22,7 @@ import edu.zut.cs.software.navigation.map.service.PlaceManager;
 public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements PlaceManager{
 	
 	PlaceDao placeDao;
-	
+	PlaceManager placeManager;
 	@Autowired
 	public void setPlaceDao(PlaceDao placeDao) {
 		this.placeDao = placeDao;
@@ -87,6 +87,24 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 	public void updateById(Long id,String name) {
 		Place place = dao.getOne(id);
 		place.setName(name);
+		this.save(place);
 	}
 	
+	@Override
+	public void updateById(Long id,String name,String llocation,String rlocation) {
+		Place place = dao.getOne(id);
+		place.setName(name);
+		place.setX(llocation);
+		place.setY(rlocation);
+		this.save(place);
+	}
+	
+	@Override
+	public void create(String name,String llocation,String rlocation) {
+		Place place = new Place();
+		place.setName(name);
+		place.setX(llocation);
+		place.setY(rlocation);
+		this.save(place);
+	}
 }

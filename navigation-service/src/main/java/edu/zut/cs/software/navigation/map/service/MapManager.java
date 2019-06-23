@@ -11,4 +11,9 @@ public interface MapManager extends GenericTreeManager<Map, Long> {
 
 	List<Map> findAll();
 	
+	void deleteById(Long id);
+	 
+	 void updateById(Long id,String name,String area);
+	 
+	 void create(String name,String area);
 }

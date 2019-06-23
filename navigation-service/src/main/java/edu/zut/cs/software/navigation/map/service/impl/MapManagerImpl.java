@@ -42,5 +42,24 @@ public class MapManagerImpl extends GenericTreeManagerImpl<Map, Long> implements
     	return result;
     }
     
-   
+    @Override
+	public void deleteById(Long id) {
+		dao.deleteById(id);
+	}
+    @Override
+	public void updateById(Long id,String name,String area) {
+    	Map m = dao.getOne(id);
+		m.setName(name);
+		m.setArea(area);
+		this.save(m);
+    }
+    @Override
+	public void create(String name,String area) {
+		Map m = new Map();
+		m.setName(name);
+		m.setArea(area);
+		this.save(m);
+	}
+    
+    
 }
