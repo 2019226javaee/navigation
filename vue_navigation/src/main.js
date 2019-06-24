@@ -10,12 +10,16 @@ import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui' //element-ui的全部组件
 import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
 
-Vue.use(ElementUI) //使用elementUI
-Vue.use(Axios,VueAxios)
 Vue.config.productionTip = false
-Vue.prototype.$axios = Axios
 
+Vue.use(ElementUI)
+//将其挂载到Vue实例上
+Vue.prototype.$axios = Axios
+//挂载HOST，解决跨域问题
+Vue.prototype.HOST = '/api'
 Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
+Vue.use(Axios,VueAxios)
 
 
 

@@ -32,7 +32,7 @@
         submits1: function (postData) {
           this.$axios({
             method: 'post',
-            url: this.HOST + '/place/tt',
+            url: this.HOST + '/place/tt/',
             data: postData
             /* parameter match  */
           }).then((res) => {
