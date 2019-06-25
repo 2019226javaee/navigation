@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-menu :default-active="$route.path" router="true"  class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+    <el-menu :default-active="$route.path"  router="true" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
       <el-menu-item index="/components/warehouse/homepage">
         <i class="el-icon-menu"></i>
         <span slot="title" >首页</span>
@@ -8,6 +8,8 @@
       <el-menu-item index="/components/warehouse/search">查询路线</el-menu-item>
       <el-menu-item index="/components/warehouse/place">查询地点</el-menu-item>
       <el-menu-item index="/components/warehouse/location">获取当前位置</el-menu-item>
+      <el-menu-item index="/components/nvgtable/placetable">地点表格</el-menu-item>
+      <el-menu-item index="/components/nvgtable/maptable">地图表格</el-menu-item>
       <el-submenu index="2">
         <template slot="title">其他</template>
         <el-menu-item index="/components/warehouse/testv">测速</el-menu-item>

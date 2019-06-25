@@ -5,6 +5,8 @@ import about from '@/components/warehouse/about'
 import homepage from '@/components/warehouse/homepage'
 import search from '@/components/warehouse/search'
 import place from '@/components/warehouse/place'
+import placetable from '@/components/nvgtable/placetable'
+import maptable from '@/components/nvgtable/maptable'
 
 Vue.use(Router)
 
@@ -34,6 +36,16 @@ export default new Router({
       path: '/components/warehouse/place',
       name: 'place',
       component: place
+    },
+    {
+      path: '/components/nvgtable/placetable',
+      name: 'placetable',
+      component: placetable
+    },
+    {
+      path: '/components/nvgtable/maptable',
+      name: 'maptable',
+      component: maptable
     }
   ]
 })

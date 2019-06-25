@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,10 +38,9 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
 
     @ResponseBody
 	@RequestMapping(value = "all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
-	public String findAllPlace() {
+	public List<Place> findAllPlace() {
     	List<Place> placeList = this.manager.findAll();
-        PageInfo pageInfo = new PageInfo(placeList);
-        return JSON.toJSONString(pageInfo);
+        return placeList;
 	}
     
     @ResponseBody
@@ -58,6 +58,25 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
     	System.out.println("该方法已经被调用");
    		return this.manager.findAll();
    	}
+    
+    @RequestMapping(path = "/save",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
+    public @ResponseBody Place saveOne( Place p){
+        this.placeManager.save(p);
+        return p;
+    }
+    
+    @RequestMapping(path = "/info",method = RequestMethod.PUT,produces = "application/json;charset=utf-8")
+    public @ResponseBody Place updateOne( Place p){
+        Place p1 =this.placeManager.findById(p.getId());
+        this.placeManager.updateById(p.getId(),p.getName());
+        return p1;
+    }
 
+    @RequestMapping(path = "/delete/{id}",method = RequestMethod.DELETE,produces = "application/json;charset=utf-8")
+    public  @ResponseBody Place  deleteOne(@PathVariable(value = "id") Long id) {
+        Place p = this.placeManager.findById(id);
+        this.placeManager.deleteById(id);
+        return p;
+    }
 	
 }
