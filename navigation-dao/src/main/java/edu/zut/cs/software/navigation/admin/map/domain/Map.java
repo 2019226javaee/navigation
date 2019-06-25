@@ -67,7 +67,18 @@ public class Map extends BaseTreeEntity<Map> {
 		this.area = area;
 	}
 
+	@Column(name = "Placenum")
+	String placenum;
 
+	public String getPlacenum() {
+		return placenum;
+	}
+
+	public void setPlacenum(String placenum) {
+		this.placenum = placenum;
+	}
+
+	
 
 
 }

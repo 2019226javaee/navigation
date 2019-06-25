@@ -36,6 +36,12 @@ public class Road extends BaseTreeEntity<Road>{
 	@Column(name="Length")
 	float length;
 	
+	@Column(name="Start")
+		String start;
+	
+	@Column(name="End")
+	String end;
+	
 	public String getname() {
 		return name;
 	}
@@ -48,6 +54,18 @@ public class Road extends BaseTreeEntity<Road>{
 	}
 	public void setlength(float length) {
 		this.length=length;
+	}
+	public String getStart() {
+		return start;
+	}
+	public void setStart(String start) {
+		this.start = start;
+	}
+	public String getEnd() {
+		return end;
+	}
+	public void setEnd(String end) {
+		this.end = end;
 	}
 	public void setParent(Road road) {
 		// TODO Auto-generated method stub

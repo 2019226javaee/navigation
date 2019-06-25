@@ -17,6 +17,17 @@ public class Route extends BaseEntity{
 	 */
 	private static final long serialVersionUID = 1L;
 
+
+	@Column(name="Name")
+	String name;
+	
+	@Column(name="Number")
+	String number;
+	
+	@Column(name="Zlength")
+	String zlength;
+	
+
 	public String getName() {
 		return name;
 	}
@@ -24,10 +35,23 @@ public class Route extends BaseEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Column(name="Name")
-	String name;
 	
-	
+	public String getZlength() {
+		return zlength;
+	}
+
+	public void setZlength(String zlength) {
+		this.zlength = zlength;
+	}
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
 	public Road getRoad() {
 		return road;
 	}

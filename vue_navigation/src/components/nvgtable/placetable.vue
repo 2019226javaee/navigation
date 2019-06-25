@@ -143,8 +143,8 @@
         var placeId = row.id;
         console.log(placeId);
         this.$axios
-          .delete(this.HOST + '/sun/place/delete/' + placeId)
-          .then(res => {
+          .delete(this.HOST + '/navigation-web/place/delete/' + placeId)
+              .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
           })

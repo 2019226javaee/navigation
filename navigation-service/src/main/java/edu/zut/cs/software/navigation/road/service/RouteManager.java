@@ -9,4 +9,11 @@ public interface RouteManager extends GenericManager<Route,Long>{
 
 	List<Route> findbyRoutename(String route);
 	
+    void deleteById(Long id);
+	 
+	void updateById(Long id,String name);
+	 
+	void updateById(Long id,String name,String number,String zlength);
+	 
+	void create(String name,String number,String zlength);
 }

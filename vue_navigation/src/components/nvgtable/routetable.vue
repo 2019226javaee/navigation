@@ -6,21 +6,21 @@
 
     <el-table-column
       label="创建日期"
-      width="300">
+      width="200">
       <template slot-scope="scope">
         <i class="el-icon-time"></i>
         <span style="margin-left: 10px">{{date}}</span>
       </template>
     </el-table-column>
-    <el-table-column  label="ID" width="200">
+    <el-table-column  label="ID" width="150">
       <template slot-scope="scope">
         <span>{{ scope.row.id}}</span>
       </template>
     </el-table-column>
 
     <el-table-column
-      label="地图名称"
-      width="250">
+      label="路网名"
+      width="150">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
         <span style="margin-left: 10px">{{ scope.row.name }}</span>
@@ -30,19 +30,19 @@
 
 
     <el-table-column
-      label="地图面积"
-      width="200">
+      label="路个数"
+      width="150">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.area }}</span>
+        <span style="margin-left: 10px">{{ scope.row.number }}</span>
       </template>
     </el-table-column>
     <el-table-column
-      label="地点个数"
-      width="200">
+      label="总长度"
+      width="150">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.placenum }}</span>
+        <span style="margin-left: 10px">{{ scope.row.zlength }}</span>
       </template>
     </el-table-column>
 
@@ -55,17 +55,17 @@
         <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <el-dialog title="地图增加" :visible.sync="dialogFormVisible">
+        <el-dialog title="路网增加" :visible.sync="dialogFormVisible">
           <el-form :model="Form">
-            <el-form-item label="地图名称" :label-width="formLabelWidth">
+            <el-form-item label="路网名" :label-width="formLabelWidth">
               <el-input v-model="Form.name" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="地图面积" :label-width="formLabelWidth">
-              <el-input v-model="Form.area" autocomplete="off">
+            <el-form-item label="路个数" :label-width="formLabelWidth">
+              <el-input v-model="Form.number" autocomplete="off">
               </el-input>
-            </el-form-item>
-            <el-form-item label="地点个数" :label-width="formLabelWidth">
-              <el-input v-model="Form.placenum" autocomplete="off">
+              </el-form-item>
+              <el-form-item label="总长度" :label-width="formLabelWidth">
+              <el-input v-model="Form.zlength" autocomplete="off">
               </el-input>
             </el-form-item>
           </el-form>
@@ -103,9 +103,9 @@
         dialogFormVisible: false,
         Form: {
           name: '',
-          area: '',
           id: '',
-          placenum: '',
+          number: '',
+          zlength: '',
           date:'',
         },
         formLabelWidth: '120px',
@@ -116,12 +116,12 @@
       update(index,row) {
       },
       postForm() {
-        const url = this.HOST + '/navigation-web/map/save';
+        const url = this.HOST + '/navigation-web/route/save';
         this.dialogFormVisible = false;
         var params = new URLSearchParams();
         params.append('name', this.Form.name);
-        params.append('area', this.Form.area);
-        params.append('placenum', this.Form.placenum);
+        params.append('number', this.Form.number);
+        params.append('zlength', this.Form.zlength);
         console.log(params);
         this.$axios({
           method: 'post',
@@ -143,7 +143,7 @@
         var placeId = row.id;
         console.log(placeId);
         this.$axios
-          .delete(this.HOST + '/navigation-web/map/delete/' + placeId)
+          .delete(this.HOST + '/navigation-web/route/delete/' + placeId)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -161,7 +161,7 @@
       }
     },
     created() {
-      this.$axios.get(this.HOST+'/navigation-web/map/all')
+      this.$axios.get(this.HOST+'/navigation-web/route/all')
         .then(response=>{
           console.log(response);
           this.tableData=response.data;

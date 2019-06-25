@@ -10,6 +10,8 @@
       <el-menu-item index="/components/warehouse/location">获取当前位置</el-menu-item>
       <el-menu-item index="/components/nvgtable/placetable">地点表格</el-menu-item>
       <el-menu-item index="/components/nvgtable/maptable">地图表格</el-menu-item>
+      <el-menu-item index="/components/nvgtable/roadtable">路段表格</el-menu-item>
+      <el-menu-item index="/components/nvgtable/routetable">路网表格</el-menu-item>
       <el-submenu index="2">
         <template slot="title">其他</template>
         <el-menu-item index="/components/warehouse/testv">测速</el-menu-item>

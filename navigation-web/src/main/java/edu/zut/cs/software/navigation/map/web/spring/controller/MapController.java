@@ -54,7 +54,7 @@ public class MapController extends GenericController<Map, Long, MapManager>{
     @RequestMapping(path = "/info",method = RequestMethod.PUT,produces = "application/json;charset=utf-8")
     public @ResponseBody Map updateOne( Map m){
         Map  m1=this.mapManager.findById(m.getId());
-        this.mapManager.updateById(m1.getId(),m1.getName(),m1.getArea());
+        this.mapManager.updateById(m1.getId(),m1.getName(),m1.getArea(),m.getPlacenum());
         return m1;
     }
 
