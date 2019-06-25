@@ -31,5 +31,34 @@ public  class OffsetManagerImpl extends GenericTreeManagerImpl<Offset, Long> imp
 		List<Offset> result = this.dao.findAll(example);
 		return result;
 	}
+	 @Override
+	    public List<Offset> findAll(){
+	    	List<Offset> result = this.dao.findAll();
+	    	return result;
+	    }
+	    
+	    @Override
+		public void deleteById(Long id) {
+			dao.deleteById(id);
+		}
+	    @Override
+		public void updateById(Long id,String name,String coordinate,String direction,String size) {
+	    	Offset m = dao.getOne(id);
+			m.setName(name);
+			m.setCoordinate(coordinate);
+			m.setDirection(direction);
+			m.setSize(size);
+			this.save(m);
+	    }
+	    @Override
+		public void create(String name,String coordinate,String direction,String size) {
+			Offset m = new Offset();
+			m.setName(name);
+			m.setCoordinate(coordinate);
+			m.setDirection(direction);
+			m.setSize(size);
+			this.save(m);
+		}
+	    
 	
 }
