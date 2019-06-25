@@ -37,6 +37,28 @@ public class Offset extends BaseTreeEntity<Offset> {
 
 	@Column(name = "Coordinate")
 	String coordinate;
+	
+	public String getDirection() {
+		return direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
+
+	@Column(name = "Size")
+	String size; 
+	
+	@Column(name = "Direction")
+	String direction;
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
 
 	public String getName() {
 		return name;
