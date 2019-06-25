@@ -11,6 +11,7 @@ import roadtable from '@/components/nvgtable/roadtable'
 import routetable from '@/components/nvgtable/routetable'
 import devicetable from '@/components/nvgtable/devicetable'
 import keepertable from '@/components/nvgtable/keepertable'
+import offsettable from '@/components/nvgtable/offsettable'
 
 Vue.use(Router)
 
@@ -70,6 +71,11 @@ export default new Router({
       path: '/components/nvgtable/keepertable',
       name: 'keepertable',
       component: keepertable
+    },
+    {
+      path: '/components/nvgtable/offsettable',
+      name: 'offsettable',
+      component: offsettable
     }
   ]
 })

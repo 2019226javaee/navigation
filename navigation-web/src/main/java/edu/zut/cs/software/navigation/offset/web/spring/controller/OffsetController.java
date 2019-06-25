@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.zut.cs.software.navigation.admin.map.domain.Map;
+import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.admin.offset.domain.Offset;
 import edu.zut.cs.software.navigation.base.web.spring.controller.GenericController;
 import edu.zut.cs.software.navigation.offset.service.OffsetManager;
@@ -39,10 +40,10 @@ public class OffsetController extends GenericController<Offset, Long,OffsetManag
     }
     
     @ResponseBody
-	@GetMapping(value = "all",produces = "application/json;charset=utf-8")
-	public List<Offset> findAllOffset(){
-    	List<Offset> all=this.manager.findAll();
-    	return all;
+	@RequestMapping(value = "all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
+	public List<Offset> findAllOffset() {
+    	List<Offset> offsetList = this.manager.findAll();
+        return offsetList;
 	}
     @RequestMapping(path = "/save",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public @ResponseBody Offset saveOne( Offset m){
