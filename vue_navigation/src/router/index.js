@@ -7,6 +7,10 @@ import search from '@/components/warehouse/search'
 import place from '@/components/warehouse/place'
 import placetable from '@/components/nvgtable/placetable'
 import maptable from '@/components/nvgtable/maptable'
+import roadtable from '@/components/nvgtable/roadtable'
+import routetable from '@/components/nvgtable/routetable'
+import devicetable from '@/components/nvgtable/devicetable'
+import keepertable from '@/components/nvgtable/keepertable'
 
 Vue.use(Router)
 
@@ -46,6 +50,26 @@ export default new Router({
       path: '/components/nvgtable/maptable',
       name: 'maptable',
       component: maptable
+    },
+    {
+      path: '/components/nvgtable/roadtable',
+      name: 'roadtable',
+      component: roadtable
+    },
+    {
+      path: '/components/nvgtable/routetable',
+      name: 'routetable',
+      component: routetable
+    },
+    {
+      path: '/components/nvgtable/devicetable',
+      name: 'devicetable',
+      component: devicetable
+    },
+    {
+      path: '/components/nvgtable/keepertable',
+      name: 'keepertable',
+      component: keepertable
     }
   ]
 })

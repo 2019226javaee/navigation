@@ -13,7 +13,7 @@ public interface MapManager extends GenericTreeManager<Map, Long> {
 	
 	void deleteById(Long id);
 	 
-	 void updateById(Long id,String name,String area);
+	void updateById(Long id,String name,String area,String placenum);
 	 
-	 void create(String name,String area);
+	void create(String name,String area,String placenum);
 }

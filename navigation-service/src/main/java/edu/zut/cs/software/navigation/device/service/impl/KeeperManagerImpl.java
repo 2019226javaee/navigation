@@ -17,9 +17,9 @@ public class KeeperManagerImpl extends GenericTreeManagerImpl<Keeper, Long> impl
 	KeeperDao keeperDao;
 
     @Autowired
-    public void setDriverDao(KeeperDao keeperDao) {
+    public void setKeeperDao(KeeperDao keeperDao) {
         this.keeperDao = keeperDao;
-        this.dao = this.keeperDao;
+        this.treeDao = this.keeperDao;
         this.dao = this.treeDao;
     }
 

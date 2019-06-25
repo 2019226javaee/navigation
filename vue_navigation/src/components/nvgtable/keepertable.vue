@@ -3,46 +3,30 @@
     :data="tableData"
     height="650px"
     style="width: 100%">
-
     <el-table-column
-      label="创建日期"
-      width="300">
+      label="日期"
+      width="200">
       <template slot-scope="scope">
         <i class="el-icon-time"></i>
-        <span style="margin-left: 10px">{{date}}</span>
-      </template>
-    </el-table-column>
-    <el-table-column  label="ID" width="200">
-      <template slot-scope="scope">
-        <span>{{ scope.row.id}}</span>
+        <span style="margin-left: 10px">{{ getLocalTime(scope.row.creatTime) }}</span>
       </template>
     </el-table-column>
 
     <el-table-column
-      label="地图名称"
-      width="250">
+      label="管理员"
+      width="180">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
         <span style="margin-left: 10px">{{ scope.row.name }}</span>
       </template>
     </el-table-column>
 
-
-
     <el-table-column
-      label="地图面积"
-      width="200">
+      label="权限"
+      width="160">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.area }}</span>
-      </template>
-    </el-table-column>
-    <el-table-column
-      label="地点个数"
-      width="200">
-      <template slot-scope="scope">
-        <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.placenum }}</span>
+        <span style="margin-left: 10px">{{ scope.row.access }}</span>
       </template>
     </el-table-column>
 
@@ -55,18 +39,13 @@
         <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <el-dialog title="地图增加" :visible.sync="dialogFormVisible">
-          <el-form :model="Form">
-            <el-form-item label="地图名称" :label-width="formLabelWidth">
-              <el-input v-model="Form.name" autocomplete="off"></el-input>
+        <el-dialog title="获取权限" :visible.sync="dialogFormVisible">
+          <el-form :model="epdtForm">
+            <el-form-item label="管理员" :label-width="formLabelWidth">
+              <el-input v-model="epdtForm.name" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="地图面积" :label-width="formLabelWidth">
-              <el-input v-model="Form.area" autocomplete="off">
-              </el-input>
-            </el-form-item>
-            <el-form-item label="地点个数" :label-width="formLabelWidth">
-              <el-input v-model="Form.placenum" autocomplete="off">
-              </el-input>
+            <el-form-item label="权限" :label-width="formLabelWidth">
+              <el-input v-model="epdtForm.access" autocomplete="off"></el-input>
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
@@ -86,7 +65,7 @@
         <el-button
           type="success"
           size="mini"
-          @click="update(scope.$index, scope.row)">修改</el-button>
+          @click="updateExpenditure(scope.$index, scope.row)">编辑</el-button>
 
 
       </template>
@@ -101,49 +80,96 @@
         tableData: [],
         dialogTableVisible: false,
         dialogFormVisible: false,
-        Form: {
+        epdtForm: {
           name: '',
-          area: '',
-          id: '',
-          placenum: '',
-          date:'',
+          access: '',
         },
         formLabelWidth: '120px',
-        date:new Date(),
+        // epdtFormToUpdate:{
+        //
+        // }
       }
     },
     methods: {
-      update(index,row) {
+      updateExpenditure(index,row) {
+        this.$prompt('请输入更改的权限', '修改', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+        }).then(({value}) => {
+          this.$message({
+            type: 'success',
+            message: '已保存: '
+          });
+          console.log(row.id, value);
+
+
+          this.$axios({
+            method: "put",
+            url: this.HOST + '/sun/expenditure/info?id=' + row.id + "&dealMoney=" + value,
+            data:{
+
+            },
+          })
+            .then(function (response) {
+
+              console.log(response);
+
+            })
+
+            .catch(function (error) {
+
+              console.log(error);
+
+            });
+
+
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消输入'
+          });
+        });
       },
+
       postForm() {
-        const url = this.HOST + '/navigation-web/map/save';
+        const url = this.HOST + '/navigation-web/keeper/all';
         this.dialogFormVisible = false;
+
         var params = new URLSearchParams();
-        params.append('name', this.Form.name);
-        params.append('area', this.Form.area);
-        params.append('placenum', this.Form.placenum);
+        params.append('name', this.epdtForm.name);
+        params.append('access', this.epdtForm.access);
+
         console.log(params);
         this.$axios({
           method: 'post',
           url: url,
           data: params
         })
+
           .then(function (response) {
+
             console.log(response);
+
           })
+
           .catch(function (error) {
+
             console.log(error);
+
           });
       },
+
       handleEdit(index, row) {
         console.log(index, row);
+
       },
+
       handleDelete(index, row) {
         console.log(index, row);
-        var placeId = row.id;
-        console.log(placeId);
+        var expenditureId = row.id;
+        console.log(expenditureId);
         this.$axios
-          .delete(this.HOST + '/navigation-web/map/delete/' + placeId)
+          .delete(this.HOST + '/navigation-web/keeper/all' + expenditureId)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -152,35 +178,35 @@
             console.log(err);
           });
       },
+
       //时间戳转化
       getLocalTime(nS) {
         return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
-      },
-      timeNow () {
-        return moment().utc().format('YYYY年MM月DD日') + ' ' + moment().utc().format('dddd')
       }
     },
     created() {
-      this.$axios.get(this.HOST+'/navigation-web/map/all')
-        .then(response=>{
+      this.$axios.get(this.HOST + '/navigation-web/keeper/all')
+
+      //then获取成功；response成功后的返回值（对象）
+
+        .then(response => {
+
           console.log(response);
-          this.tableData=response.data;
+
+          this.tableData = response.data;
+
         })
-        .catch(error=>{
+
+        //获取失败
+
+        .catch(error => {
+
           console.log(error);
+
           alert('网络错误，不能访问');
+
         })
-    },
-    mounted() {
-      let _this = this;
-      this.timer = setInterval(function() {
-        _this.date = new Date().toLocaleString();
-      });
-    },
-    beforeDestroy: function() {
-      if (this.timer) {
-        clearInterval(this.timer);
-      }
-    },
+
+    }
   }
 </script>

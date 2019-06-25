@@ -36,7 +36,7 @@ public class MapManagerTest extends GenericTreeManagerTestCase<Long, Map, MapMan
 		this.entity = this.manager.save(map);
 	}
     
-    @Test
+    /*@Test
 	public void findbyMapname() {
 		List<Map> result = this.mapManager.findbyMapname("南苑地图");
         assertNotNull(result);
@@ -44,5 +44,16 @@ public class MapManagerTest extends GenericTreeManagerTestCase<Long, Map, MapMan
         Assert.assertEquals("南苑地图", result.get(0).getName());
         
 		
-	}
+	}*/
+    /*@Test
+	public void updatecase() {
+		mapManager.updateById((long)687,"中原工学院地图","1500亩",51);
+		System.out.println("地图数据已经被修改");
+	}*/
+    
+    /*@Test
+	public void updateByIdcase() {
+		mapManager.updateById((long)325,"中原工学院地图","1500亩","51");
+		System.out.println("地图数据已经被修改");
+	}*/
 }

@@ -53,7 +53,7 @@ public class KeeperController extends GenericController<Keeper, Long, KeeperMana
     @RequestMapping(path = "/info",method = RequestMethod.PUT,produces = "application/json;charset=utf-8")
     public @ResponseBody Keeper updateOne( Keeper k){
         Keeper  k1=this.keeperManager.findById(k.getId());
-        this.keeperManager.updateById(k1.getId(),k1.getName(),k1.getAccess());
+        this.keeperManager.updateById(k.getId(),k.getName(),k.getAccess());
         return k1;
     }
 

@@ -47,17 +47,19 @@ public class MapManagerImpl extends GenericTreeManagerImpl<Map, Long> implements
 		dao.deleteById(id);
 	}
     @Override
-	public void updateById(Long id,String name,String area) {
+	public void updateById(Long id,String name,String area,String placenum) {
     	Map m = dao.getOne(id);
 		m.setName(name);
 		m.setArea(area);
+		m.setPlacenum(placenum);
 		this.save(m);
     }
     @Override
-	public void create(String name,String area) {
+	public void create(String name,String area,String placenum) {
 		Map m = new Map();
 		m.setName(name);
 		m.setArea(area);
+		m.setPlacenum(placenum);
 		this.save(m);
 	}
     

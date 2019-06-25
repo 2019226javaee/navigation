@@ -19,7 +19,7 @@
     </el-table-column>
 
     <el-table-column
-      label="地图名称"
+      label="设备名"
       width="250">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
@@ -30,21 +30,14 @@
 
 
     <el-table-column
-      label="地图面积"
+      label="app"
       width="200">
       <template slot-scope="scope">
         <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.area }}</span>
+        <span style="margin-left: 10px">{{ scope.row.x }}</span>
       </template>
     </el-table-column>
-    <el-table-column
-      label="地点个数"
-      width="200">
-      <template slot-scope="scope">
-        <!--<i class="el-icon-time"></i>-->
-        <span style="margin-left: 10px">{{ scope.row.placenum }}</span>
-      </template>
-    </el-table-column>
+
 
     <el-table-column label="操作">
       <template slot-scope="scope">
@@ -55,17 +48,13 @@
         <!-- Form -->
         <el-button type="primary" @click="dialogFormVisible = true" size="mini">新增</el-button>
 
-        <el-dialog title="地图增加" :visible.sync="dialogFormVisible">
+        <el-dialog title="设备增加" :visible.sync="dialogFormVisible">
           <el-form :model="Form">
-            <el-form-item label="地图名称" :label-width="formLabelWidth">
+            <el-form-item label="设备名" :label-width="formLabelWidth">
               <el-input v-model="Form.name" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="地图面积" :label-width="formLabelWidth">
-              <el-input v-model="Form.area" autocomplete="off">
-              </el-input>
-            </el-form-item>
-            <el-form-item label="地点个数" :label-width="formLabelWidth">
-              <el-input v-model="Form.placenum" autocomplete="off">
+            <el-form-item label="app" :label-width="formLabelWidth">
+              <el-input v-model="Form.app" autocomplete="off">
               </el-input>
             </el-form-item>
           </el-form>
@@ -103,9 +92,8 @@
         dialogFormVisible: false,
         Form: {
           name: '',
-          area: '',
           id: '',
-          placenum: '',
+          app: '',
           date:'',
         },
         formLabelWidth: '120px',
@@ -116,12 +104,11 @@
       update(index,row) {
       },
       postForm() {
-        const url = this.HOST + '/navigation-web/map/save';
+        const url = this.HOST + '/navigation-web/device/save';
         this.dialogFormVisible = false;
         var params = new URLSearchParams();
         params.append('name', this.Form.name);
-        params.append('area', this.Form.area);
-        params.append('placenum', this.Form.placenum);
+        params.append('app', this.Form.app);
         console.log(params);
         this.$axios({
           method: 'post',
@@ -140,10 +127,10 @@
       },
       handleDelete(index, row) {
         console.log(index, row);
-        var placeId = row.id;
-        console.log(placeId);
+        var deviceId = row.id;
+        console.log(deviceId);
         this.$axios
-          .delete(this.HOST + '/navigation-web/map/delete/' + placeId)
+          .delete(this.HOST + '/navigation-web/device/delete/' + deviceId)
           .then(res => {
             console.log(res);
             this.tableData.splice(index, 1)
@@ -161,7 +148,7 @@
       }
     },
     created() {
-      this.$axios.get(this.HOST+'/navigation-web/map/all')
+      this.$axios.get(this.HOST+'/navigation-web/device/all')
         .then(response=>{
           console.log(response);
           this.tableData=response.data;
