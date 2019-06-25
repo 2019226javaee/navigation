@@ -106,14 +106,49 @@
           id: '',
           x: '',
           y: '',
-          date:'',
         },
         formLabelWidth: '120px',
-        date:new Date(),
       }
     },
     methods: {
       update(index,row) {
+        this.$prompt('请输入更改的地点名字', '修改', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+        }).then(({value}) => {
+          this.$message({
+            type: 'success',
+            message: '已保存: '
+          });
+          console.log(row.id, name);
+
+
+          this.$axios({
+            method: "put",
+            url: this.HOST + '/navigation-web/place/info?id=' + row.id + "&name=" + value,
+            data:{
+
+            },
+          })
+            .then(function (response) {
+
+              console.log(response);
+
+            })
+
+            .catch(function (error) {
+
+              console.log(error);
+
+            });
+
+
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消输入'
+          });
+        });
       },
       postForm() {
         const url = this.HOST + '/navigation-web/place/save';
@@ -155,9 +190,6 @@
       //时间戳转化
       getLocalTime(nS) {
         return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
-      },
-      timeNow () {
-        return moment().utc().format('YYYY年MM月DD日') + ' ' + moment().utc().format('dddd')
       }
     },
     created() {
