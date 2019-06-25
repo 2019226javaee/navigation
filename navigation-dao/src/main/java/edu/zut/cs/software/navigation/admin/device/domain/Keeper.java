@@ -29,6 +29,18 @@ public class Keeper extends BaseTreeEntity<Keeper> {
 	@Column(name = "Name")
 	String name;
 	
+	@Column(name = "Access")
+	String access;
+	
+	
+	public String getAccess() {
+		return access;
+	}
+
+	public void setAccess(String access) {
+		this.access = access;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -37,3 +49,4 @@ public class Keeper extends BaseTreeEntity<Keeper> {
 		this.name = name;
 	}
 }
+
