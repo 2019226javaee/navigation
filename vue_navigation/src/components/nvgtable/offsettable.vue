@@ -114,7 +114,6 @@
         dialogFormVisible: false,
         Form: {
           offset: '',
-          id: '',
           coordinate: '',
           direction: '',
           size: '',

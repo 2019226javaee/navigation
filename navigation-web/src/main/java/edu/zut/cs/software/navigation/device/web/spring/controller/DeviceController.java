@@ -37,12 +37,11 @@ public class DeviceController extends GenericController<Device, Long, DeviceMana
 
 
 
-    @ResponseBody
+	@ResponseBody
 	@RequestMapping(value = "all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
-	public String findAllDevice() {
+	public List<Device> findAllPlace() {
     	List<Device> deviceList = this.manager.findAll();
-        PageInfo pageInfo = new PageInfo(deviceList);
-        return JSON.toJSONString(pageInfo);
+        return deviceList;
 	}
     
     @ResponseBody

@@ -22,7 +22,7 @@
         <el-menu-item index="/components/nvgtable/routetable">路网表格</el-menu-item>
         <el-menu-item index="/components/nvgtable/devicetable">设备表格</el-menu-item>
         <el-menu-item index="/components/nvgtable/keepertable">管理表格</el-menu-item>
-        <el-menu-item index="/components/nvgtable/offsettable">管理表格</el-menu-item>
+        <el-menu-item index="/components/nvgtable/offsettable">偏移量表格</el-menu-item>
       </el-submenu>
       <el-menu-item>
         <a href="https://www.amap.com/search?id=B01730JQWK&city=410184&geoobj=113.71147%7C34.612157%7C113.728006%7C34.618916&query_type=IDQ&query=%E4%B8%AD%E5%8E%9F%E5%B7%A5%E5%AD%A6%E9%99%A2%E9%BE%99%E6%B9%96%E6%A0%A1%E5%8C%BA&zoom=16" target="_blank">中工藏宝图</a>
