@@ -4,14 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.alibaba.fastjson.JSON;
-import com.github.pagehelper.PageInfo;
 
 import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.web.spring.controller.GenericController;
@@ -29,13 +25,13 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         this.placeManager = placeManager;
         this.manager = this.placeManager;
     }
+	
 	@RequestMapping("/index")
     public String index() {
         return "place/index";
     }
 
-
-
+	//返回全部实体
     @ResponseBody
 	@RequestMapping(value = "all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
 	public List<Place> findAllPlace() {
@@ -43,22 +39,7 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         return placeList;
 	}
     
-    @ResponseBody
-	@GetMapping(value = "allex",produces = "application/json;charset=utf-8")
-	public List<Place> findAllPlaceex(){
-		return this.manager.findAll();
-	}
-
-    @ResponseBody
-   	@GetMapping(value = "tt",produces = "application/json;charset=utf-8")
-   	public List<Place> ttasd(){
-    	Place p = new Place();
-    	p.setName("z中原工学院");
-    	placeManager.save(p);
-    	System.out.println("该方法已经被调用");
-   		return this.manager.findAll();
-   	}
-    
+    //新增按钮，通过传回的地点实体保存进数据库
     @RequestMapping(path = "/save",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public @ResponseBody Place saveOne( Place p){
         this.placeManager.save(p);
@@ -66,17 +47,14 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
     }
     
     @RequestMapping(path = "/info",method = RequestMethod.PUT,produces = "application/json;charset=utf-8")
-    public @ResponseBody Place updateOne( Place p){
-        Place p1 =this.placeManager.findById(p.getId());
+    public @ResponseBody void updateOne( Place p){
         this.placeManager.updateById(p.getId(),p.getName());
-        return p1;
     }
 
+    //删除按钮，通过传回的id找到要删除的对象
     @RequestMapping(path = "/delete/{id}",method = RequestMethod.DELETE,produces = "application/json;charset=utf-8")
-    public  @ResponseBody Place  deleteOne(@PathVariable(value = "id") Long id) {
-        Place p = this.placeManager.findById(id);
-        this.placeManager.deleteById(id);
-        return p;
+    public  @ResponseBody void deleteOne(@PathVariable(value = "id") Long id) {
+        this.placeManager.delete(id);//deleteById(id);
     }
 	
 }

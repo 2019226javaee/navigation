@@ -63,4 +63,5 @@ public class PlaceManagerTest extends GenericManagerTestCase<Long, Place, PlaceM
 		placeManager.updateById((long)687,"南十研究生宿舍楼","21","44");
 		System.out.println("南十数据已经被修改");
 	}*/
+	
 }

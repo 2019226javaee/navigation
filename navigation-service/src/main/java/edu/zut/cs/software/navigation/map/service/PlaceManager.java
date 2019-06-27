@@ -8,23 +8,51 @@ import edu.zut.cs.software.navigation.base.service.GenericManager;
 public interface PlaceManager extends GenericManager<Place, Long> {
 
 	
-	//通过地点名称查找地点
+	/**
+	 * * fetch entity according given name
+	 *
+	 * @param name
+	 * @return entity
+	 */
 	List<Place> findbyPlacename(String place);
 	
+	/**
+	 * * fetch entity according given name 
+	 *
+	 * @param name
+	 * @return entity
+	 */
 	List<Place> findbyTPlacename(String place1,String place2);
 	
-	//通过地点编号查找地点
+	/**
+	 * * fetch entity according given location
+	 *
+	 * @param location
+	 * @return entity
+	 */
 	List<Place> findbyLocation(String leftlocation,String rightlocation);
 	
 	
-	//找到地点的坐标
+	/**
+	 * * fetch location according given name
+	 *
+	 * @param name
+	 * @return entity
+	 */
 	List<String> findPlaceLocation(String name);
-	
-	 void deleteById(Long id);
 	 
-	 void updateById(Long id,String name);
+	/**
+	 * * update entity according given id
+	 *
+	 * @param id
+	 */
+	void updateById(Long id,String name);
 	 
-	 void updateById(Long id,String name,String llocation,String rlocation);
+	/**
+	 * * update entity according given id
+	 *
+	 * @param id
+	 */
+	void updateById(Long id,String name,String llocation,String rlocation);
 	 
-	 void create(String name,String llocation,String rlocation);
 }

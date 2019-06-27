@@ -78,10 +78,10 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 		
 		
 	}
-	@Override
-	public void deleteById(Long id) {
-		dao.deleteById(id);
-	}
+//    Override
+//	public void deleteById(Long id) {
+//		dao.deleteById(id);
+//	}
 	
 	@Override
 	public void updateById(Long id,String name) {
@@ -99,12 +99,4 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 		this.save(place);
 	}
 	
-	@Override
-	public void create(String name,String llocation,String rlocation) {
-		Place place = new Place();
-		place.setName(name);
-		place.setX(llocation);
-		place.setY(rlocation);
-		this.save(place);
-	}
 }
