@@ -37,7 +37,10 @@ public class MapController extends GenericController<Map, Long, MapManager>{
         return "Hello, This is Map!";
     }
     
-    
+    /**
+	 * @param null
+	 * @return list<place>
+	 */
     @RequestMapping(value = "/all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
     public @ResponseBody List<Map> getAll(){
         List<Map> all = this.mapManager.findAll();
@@ -58,10 +61,14 @@ public class MapController extends GenericController<Map, Long, MapManager>{
         return m1;
     }
 
+    /**
+	 * @param id the entity you want to delete
+	 * @return null
+	 */
     @RequestMapping(path = "/delete/{id}",method = RequestMethod.DELETE,produces = "application/json;charset=utf-8")
     public  @ResponseBody Map  deleteOne(@PathVariable(value = "id") Long id) {
         Map m = this.mapManager.findById(id);
-        this.mapManager.deleteById(id);
+        this.mapManager.delete(id);
         return m;
     }
 	

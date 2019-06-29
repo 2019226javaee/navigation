@@ -12,6 +12,18 @@ import edu.zut.cs.software.navigation.admin.map.domain.Map;
 import edu.zut.cs.software.navigation.base.service.impl.GenericTreeManagerImpl;
 import edu.zut.cs.software.navigation.map.service.MapManager;
 
+/**
+ * This class serves as the map impl class map Managers - namely to hold
+ * common CRUD methods that map might all use. And we have made some special method
+ * you can read it and use it.
+ * <p/>
+ * <p>
+ *
+ * @param Map
+ *            the entity of map
+ * @param mapname
+ *            the name of that entity
+ */
 @Component
 public class MapManagerImpl extends GenericTreeManagerImpl<Map, Long> implements MapManager{
 
@@ -36,16 +48,7 @@ public class MapManagerImpl extends GenericTreeManagerImpl<Map, Long> implements
 		return result;
     }
     
-    @Override
-    public List<Map> findAll(){
-    	List<Map> result = this.dao.findAll();
-    	return result;
-    }
     
-    @Override
-	public void deleteById(Long id) {
-		dao.deleteById(id);
-	}
     @Override
 	public void updateById(Long id,String name,String area,String placenum) {
     	Map m = dao.getOne(id);
@@ -54,14 +57,6 @@ public class MapManagerImpl extends GenericTreeManagerImpl<Map, Long> implements
 		m.setPlacenum(placenum);
 		this.save(m);
     }
-    @Override
-	public void create(String name,String area,String placenum) {
-		Map m = new Map();
-		m.setName(name);
-		m.setArea(area);
-		m.setPlacenum(placenum);
-		this.save(m);
-	}
     
     
 }

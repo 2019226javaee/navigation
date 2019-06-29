@@ -31,7 +31,10 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         return "place/index";
     }
 
-	//返回全部实体
+	/**
+	 * @param null
+	 * @return list<place>
+	 */
     @ResponseBody
 	@RequestMapping(value = "all", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
 	public List<Place> findAllPlace() {
@@ -39,7 +42,10 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         return placeList;
 	}
     
-    //新增按钮，通过传回的地点实体保存进数据库
+    /**
+	 * @param place
+	 * @return place
+	 */
     @RequestMapping(path = "/save",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public @ResponseBody Place saveOne( Place p){
         this.placeManager.save(p);
@@ -51,7 +57,10 @@ public class PlaceController extends GenericController<Place, Long, PlaceManager
         this.placeManager.updateById(p.getId(),p.getName());
     }
 
-    //删除按钮，通过传回的id找到要删除的对象
+    /**
+	 * @param id the entity you want to delete
+	 * @return null
+	 */
     @RequestMapping(path = "/delete/{id}",method = RequestMethod.DELETE,produces = "application/json;charset=utf-8")
     public  @ResponseBody void deleteOne(@PathVariable(value = "id") Long id) {
         this.placeManager.delete(id);//deleteById(id);

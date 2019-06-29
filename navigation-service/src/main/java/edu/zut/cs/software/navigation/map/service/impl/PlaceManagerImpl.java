@@ -16,6 +16,19 @@ import edu.zut.cs.software.navigation.admin.map.domain.Place;
 import edu.zut.cs.software.navigation.base.service.impl.GenericManagerImpl;
 import edu.zut.cs.software.navigation.map.service.PlaceManager;
 
+/**
+ * This class serves as the place impl class place Managers - namely to hold
+ * common CRUD methods that place might all use. And we have made some special method
+ * you can read it and use it.
+ * <p/>
+ * <p>
+ *
+ * @param Place
+ *            the entity of place
+ * @param palcename
+ *            the name of that entity
+ */
+
 @Service("placeManager")
 @Component
 @Transactional
@@ -78,10 +91,6 @@ public class PlaceManagerImpl extends GenericManagerImpl<Place, Long> implements
 		
 		
 	}
-//    Override
-//	public void deleteById(Long id) {
-//		dao.deleteById(id);
-//	}
 	
 	@Override
 	public void updateById(Long id,String name) {
